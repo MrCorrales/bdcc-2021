@@ -1,0 +1,56 @@
+
+body{
+  --bg-main: var(--white);
+
+  width: 100%;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  //background: url($images-path + "bg.png") repeat;
+  //background-size:8px 8px;
+  background-color: var(--bg-main);
+  color: var(--secondary);
+  //image-rendering: pixelated;
+
+  transition: background-color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+
+  &:not(.__scroll-manual){
+    /*overflow: hidden;
+
+    main {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+    }*/
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.__scroll-manual {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+main {
+  width: 100%;
+}
+
+@media (max-width: $largeScreen) {
+  body {}
+}
+
+@media (max-width: $smartphone) {
+  body {}
+}

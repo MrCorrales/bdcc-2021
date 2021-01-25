@@ -1,0 +1,34 @@
+.header-news-detail {
+  --font-size-title: var(--font-size-xlarge);
+
+  padding: var(--padding-l) var(--padding-m) 0;
+  margin: 0 auto;
+  max-width: var(--max-width-news);
+}
+
+.header-news-detail > .link-back {
+  margin-bottom: 2em;
+}
+
+.header-news-detail > .date {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sans);
+  font-weight: 500;
+
+  margin-bottom: .6em;
+}
+
+.header-news-detail > .title {
+  margin-top: 0;
+  @include titleFont();
+  font-size: var(--font-size-title);
+}
+
+@media (max-width: $smartphone) {
+  .header-news-detail {
+    --font-size-title: var(--font-size-title-tablet);
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+  }
+}

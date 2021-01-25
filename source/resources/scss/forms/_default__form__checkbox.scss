@@ -1,0 +1,100 @@
+
+//CHECK
+.default__form__checkbox {
+  --size: 30px;//1.875rem; // rem(30px);
+  --size-check: 24px; // rem(30px);
+
+  position: relative;
+  height: var(--size);
+
+  &:after,
+  &:before {
+    @include pseudo-element-absolute();
+    margin: 0;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid var(--color);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  &:after {
+    display: none;
+    top:0;
+    left: calc(var(--size) * -1.2);
+    //right: calc(var(--size) * -1.05);
+    background: url($svg-path + "form/ac78-nok.svg") 100% 100% no-repeat;
+    background-color: var(--color-error);
+  }
+
+  &.error {
+    &:after {
+      display: block;
+    }
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--size);
+
+    font-family: var(--font-sans);
+    font-size: var(--font-size-label);
+    line-height: var(--line-height-sans);
+    font-weight: 400;
+
+    cursor: pointer;
+    padding: .15em 0 0 calc(var(--size) * 1.2);
+
+    a {
+      @include default-a();
+      text-decoration: underline;
+      display: inline-block;
+      margin-left: .3em;
+    }
+
+    &:after {
+      @include pseudo-element-absolute();
+      top:calc((var(--size) - var(--size-check))*.5);
+      left:calc((var(--size) - var(--size-check))*.5);
+      margin: 0;
+      width: var(--size-check);
+      height: var(--size-check);
+      border: 1px solid var(--color);
+      border-radius: 50%;
+      background: var(--color);
+
+      opacity: 0;
+      transform: scale3d(0,0,1);
+
+      transition:
+              opacity .2s var(--ease-out-quad) .1s,
+              transform .4s var(--ease-in-quad);
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+        transform: scale3d(.5,.5,1);
+        transition:
+                opacity .2s var(--ease-out-quad),
+                transform .6s var(--ease-out-expo);
+      }
+    }
+  }
+
+  input[type=radio],
+  input[type=checkbox] {
+    position: absolute;
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+      transform: scale3d(1,1,1);
+
+      transition:
+              opacity .2s var(--ease-out-quad),
+              transform .6s var(--ease-out-expo);
+    }
+  }
+}

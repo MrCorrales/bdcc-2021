@@ -1,0 +1,356 @@
+.goto-main {
+  position: fixed;
+  @include z-index($z-index-header-with-sidemenu);
+  top:-2000px;
+  left:50%;
+  transform: translateX(-50%);
+  --bg:var(--white);
+  --color:var(--black);
+  --border-color:var(--black);
+  --colorHover: var(--white);
+  --bgHover: var(--black);
+}
+
+.__accessible {
+  .goto-main:focus {
+    top:var(--padding-xs);
+  }
+}
+
+#Header {
+  --header-gap: var(--padding-xs);
+
+  position: fixed;
+  @include z-index($z-index-header);
+  width: 100%;
+  top:0;
+  left:0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--header-gap) 0 var(--header-gap) var(--header-gap);
+  color: var(--black);
+
+  &.--disabled {
+    display: none;
+  }
+
+  &.--loading-styles {
+    *, ::before, ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0, $z-index-header + px);
+  -webkit-transform: translateZ($z-index-header + px);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0,0,$z-index-header + px);
+  transform: translateZ($z-index-header + px);
+
+  &:hover {
+    @include z-index($z-index-header-with-sidemenu);
+  }
+}
+
+.header__bg {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--black);
+  opacity: 0;
+  background-color: rgba(255,255,255,.3);
+  transition: opacity .2s var(--ease-in-quad);
+  pointer-events: none;
+}
+
+.header__title {
+  --logo-width: 5.875rem;
+  --margin-right: .3rem;
+  --position-hide:calc((var(--logo-width) + var(--margin-right)) * -1);
+  --logo-progress:1;
+
+  position: relative;
+  @include basic-a();
+  color: currentColor;
+
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  overflow: hidden;
+
+  .logo-bdcc {
+    width: var(--logo-width);
+    height: auto;
+    margin-right: var(--margin-right);
+    fill: currentColor;
+  }
+
+  .title {
+    font-family: var(--font-sans);
+    line-height: 1;
+    font-size: rem(12px);
+    font-weight: 500;
+    padding-top: .1em;
+    margin: 0 1.2em 0 0;
+  }
+
+  .logo-euskadi-eus {
+    width: auto;
+    height: rem(12px);
+    fill: currentColor;
+  }
+
+  .title,
+  .logo-bdcc,
+  .logo-euskadi-eus {
+    position: relative;
+    //transform: translateX(calc(var(--position-hide) * var(--logo-progress)));
+    //transition: transform .4s var(--ease-in-out-quad);
+  }
+
+  &.--hide-bdcc {
+    .title,
+    .logo-bdcc,
+    .logo-euskadi-eus {
+      transform: translateX(var(--position-hide));
+      transition: transform .0s !important;
+    }
+  }
+}
+
+///MODIFICADORES
+
+
+
+//.--white-all,
+.--white-right {
+  .header__nav {
+    > a,
+    > .selector-link-button {
+      --bg: transparent;
+      --color:var(--white);
+      --border-color:var(--white);
+      --colorHover: var(--black);
+      --bgHover: var(--white);
+    }
+  }
+}
+
+.--with-bg.--white-right {
+  .header__nav {
+    > a,
+    > .selector-link-button {
+      --bg: transparent;
+      --color: var(--black);
+      --border-color: var(--black);
+      --colorHover: var(--white);
+      --bgHover: var(--black);
+    }
+  }
+}
+
+
+.--with-bg {
+  .header__bg {
+    opacity: 1;
+    transition: opacity .0s;
+  }
+
+  .header__nav {
+    > a,
+    > .selector-link-button {
+      --bg: transparent;
+    }
+  }
+}
+
+/*.--white-all {
+  .header__title {
+    color: var(--white);
+  }
+  .header__bg {
+    border-color: var(--white);
+  }
+}*/
+
+#Header.--sidemenu-show {
+  @include z-index($z-index-header-with-sidemenu);
+
+  .header__bg {
+    opacity: 0;
+    transition: opacity .2s var(--ease-in-quad);
+  }
+
+  .header__nav {
+    > a,
+    > .selector-link-button {
+      --bg: transparent;
+      --color:var(--black);
+      --border-color:var(--black);
+      --colorHover: var(--white);
+      --bgHover: var(--black);
+    }
+  }
+}
+
+.header__nav {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+
+  > a,
+  > .selector-link-button {
+    --bg: transparent;
+    --color:var(--black);
+    --border-color:var(--black);
+    --colorHover: var(--white);
+    --bgHover: var(--black);
+
+    min-width: rem(120px);
+  }
+
+  > .selector-link-button {
+    --n-options: 3;
+
+    .S {
+      display: none;
+    }
+  }
+
+  .button-toggle-menu {
+    margin: 0 var(--header-gap);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .header__title {
+    .title,
+    .logo-bdcc,
+    .logo-euskadi-eus {
+      transform: translateX(0);
+    }
+  }
+
+  #Header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--black);
+    color: var(--black);
+
+    .header__title {
+      color: var(--black);
+    }
+
+    .header__nav {
+      > a,
+      > .selector-link-button {
+        --color:var(--black);
+        --border-color:var(--black);
+        --colorHover: var(--white);
+        --bgHover: var(--black);
+      }
+    }
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .header__bg {
+    background-color: rgba(255,255,255,0.2);
+  }
+
+  .header__nav {
+    > a {
+      display: none;
+    }
+  }
+
+  .header__title {
+    .title,
+    .logo-bdcc,
+    .logo-euskadi-eus {
+      transform: translateX(0);
+    }
+  }
+
+  .--with-bg {
+    .header__bg {
+      opacity: 1;
+      transition: opacity .4s var(--ease-in-quad);
+    }
+  }
+
+  .--white-right {
+    .header__nav {
+      > a,
+      > .selector-link-button {
+        --color:var(--white);
+        --border-color:var(--white);
+        --colorHover: var(--black);
+        --bgHover: var(--white);
+      }
+    }
+    .header__title {
+      color: var(--white);
+    }
+  }
+
+  .--with-bg {
+    .header__nav {
+      > a,
+      > .selector-link-button {
+        --color:var(--black);
+        --border-color:var(--black);
+        --colorHover: var(--white);
+        --bgHover: var(--black);
+      }
+    }
+    .header__title {
+      color: var(--black);
+    }
+  }
+}
+
+@media (max-width: $smartphone) {
+  #Header {
+    padding-left: 10px;
+  }
+
+  .header__title .title,
+  .header__title .logo-euskadi-eus {
+    display: none;
+  }
+
+  .header__nav {
+    .button-toggle-menu {
+      margin-left: 20px;
+      margin-right: 15px;
+    }
+
+    > .selector-link-button {
+      min-width: 80px;
+
+      .S {
+        display: block;
+      }
+
+      .L {
+        display: none;
+      }
+    }
+  }
+}

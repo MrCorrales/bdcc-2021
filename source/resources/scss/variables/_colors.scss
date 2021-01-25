@@ -1,0 +1,68 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --main-primary: #ffffff;
+  --main-secondary: #000000;
+
+  --primary: var(--main-primary);
+  --secondary: var(--main-secondary);
+
+  --green-bdcc: #78ff91;
+  --red-bdcc: #FF3B7C;
+  --grey-dark-bdcc: #cacaca;
+  --grey-bdcc: #f0f0f0;
+
+  --assertive: #FF3B7C;
+  --error: #FF3B7C;
+  --success: #78ff91;
+
+  --focus: #FF3B7C;
+}
+
+.palette-secondary {
+  --primary: var(--main-secondary);
+  --secondary: var(--main-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--main-secondary);
+    --secondary: var(--main-primary);
+  }
+}
+
+$white: var(--white);
+$black: var(--black);
+$dark: var(--dark);
+$light: var(--light);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$assertive: var(--assertive);
+$grey: var(--grey);
+$focus: var(--focus);
+$transparent: transparent;
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$youtube: #ff0000;
+$linkedin: #007bb5;
+$whatsapp: #4dc247;
+$pinterest: #cb2027;
+
+$colors: (
+        -white: $white,
+        -black: $black,
+        -dark: $dark,
+        -light: $light,
+        -primary:$primary,
+        -secondary:$secondary,
+        -assertive:$assertive,
+        -grey: $transparent,
+        -facebook: $facebook,
+        -twitter: $twitter,
+        -youtube: $youtube,
+        -linkedin: $linkedin,
+        -whatsapp: $whatsapp,
+        -pinterest: $pinterest,
+);

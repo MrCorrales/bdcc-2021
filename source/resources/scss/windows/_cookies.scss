@@ -1,0 +1,123 @@
+
+// Cookies
+// -------------------------------
+
+#Cookies {
+  position: fixed;
+  @include z-index($z-index-cookies);
+  left: 20px;
+  bottom:20px;
+  width: calc(100% - 40px);
+  max-width: 900px;
+  min-width: 300px;
+  background: $black;
+  color: $white;
+  cursor: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+
+  .content {
+    flex: 1 0 50%;
+    display: block;
+    position: relative;
+  }
+
+  .controls {
+    flex: 1 0 160px;
+    min-width: 160px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .btn-ok {
+    @include basic-a();
+    border: 2px solid var(--white);
+    border-radius: 0;
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-sans);
+    font-weight: 200;
+    line-height: 1;
+    font-size: 20px;
+
+    width: 100%;
+    padding: 15px 0;
+
+    &:hover {
+      background: $black;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  .btn-nok {
+
+    font-family: var(--font-sans);
+    font-weight: 200;
+    line-height: 1;
+    font-size: 16px;
+
+
+    @include basic-a();
+    text-decoration: underline;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    margin: 10px auto 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    font-weight: 200;
+    line-height: 1;
+    font-size: 20px;
+    margin: 0;
+
+    b, strong {
+      font-weight: 500;
+    }
+
+    a {
+      @include basic-a();
+      text-decoration: underline;
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: $smartphone) {
+  #Cookies {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+
+    .content {
+      width: 100%;
+      padding: 0 0 20px;
+    }
+
+    .controls {
+      width: 100%;
+      min-width: 100%;
+      padding: 0;
+      display: flex;
+    }
+
+    .btn-ok {
+      width: 65%;
+    }
+
+    .btn-nok {
+      margin: 0;
+      width: 35%;
+      padding: 15px 30px;
+    }
+  }
+}

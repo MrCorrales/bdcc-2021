@@ -1,0 +1,336 @@
+// SIZE
+// -------------------------------
+@mixin setSize($w,$h) {
+  width: $w;
+  height: $h;
+}
+@mixin setPosition($top:auto,$right:auto,$bottom:auto,$left:auto) {
+  top:$top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  width:100%;
+  display: block;
+  height: auto;
+  padding-top: ($height / $width) * 100%;
+}
+
+@mixin aspect-ratio-width($width, $height, $widthDiv) {
+  //position: relative;
+  //display: block;
+  width: $widthDiv;
+  height: auto;
+  padding-top: ($height / $width) * $widthDiv;
+}
+
+@mixin aspect-ratio-obj($width, $height) {
+
+  &:before{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+@mixin aspect-ratio-obj-width($width, $height,$widthDiv) {
+  position: relative;
+  width:100%;
+  display: block;
+  height: auto;
+
+  &:before{
+    display: block;
+    content: " ";
+    width: $widthDiv;
+    height: auto;
+    padding-top: ($height / $width) * $widthDiv;
+  }
+}
+
+@mixin aspect-ratio-obj-after($width, $height) {
+  position: relative;
+  width:100%;
+  display: block;
+  height: auto;
+
+  &:after{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+@mixin aspect-ratio-obj-width-after($width, $height,$widthDiv) {
+  position: relative;
+  width:100%;
+  display: block;
+  height: auto;
+
+  &:after{
+    display: block;
+    content: " ";
+    width: $widthDiv;
+    height: auto;
+    padding-top: ($height / $width) * $widthDiv;
+  }
+}
+
+@mixin aspect-ratio-img($width, $height) {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: ($height / $width) * 100%;
+
+  > img, video {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height: auto;
+  }
+}
+
+@mixin aspect-ratio-img-width($width, $height, $widthDiv) {
+  position: relative;
+  display: block;
+  width: $widthDiv;
+  height: auto;
+  padding-top: ($height / $width) * $widthDiv;
+
+  > img, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height: auto;
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-interaction {
+  pointer-events: none;
+}
+
+// Z-Index
+// -------------------------------
+@mixin z-index($level) {
+  z-index: $level;
+  transform        : translateZ($level + px) ;
+}
+
+
+// Opacity
+// -------------------------------
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.visually-hidden {
+  @extend %visuallyhidden;
+}
+
+@mixin pseudo-element-absolute($content:'') {
+  position: absolute;
+  content:$content;
+  display:block;
+}
+
+//FLEX
+@mixin flexbox-container($direction:row, $wrap:wrap) {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+  /*
+    -webkit-flex-flow: $direction $wrap;
+    flex-flow: $direction $wrap;*/
+}
+@mixin flex-size ( $ordinal, $fallback ) {
+  -webkit-box-flex: $ordinal; // OLD - iOS 6-, Safari 3.1-6
+  -moz-box-flex: $ordinal;    // OLD - Firefox 19-
+  width: $fallback;           // OLD - Fallback to prevent collapse
+  -webkit-flex: $ordinal;     // NEW - Chrome prefixed
+  -ms-flex: $ordinal;         // NEW - IE prefixed
+  flex: $ordinal;             // NEW - Proper Spec
+}
+
+@mixin flexbox-order($order) {
+  -webkit-order: $order;
+  -ms-flex-order: $order;
+  order: $order;
+}
+@mixin flexbox-spacebetween() {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@mixin flexbox-justify-spacebetween() {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@mixin flexbox-justify-spacearound() {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+@mixin flexbox-justify-center() {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@mixin flexbox-justify-flexstart() {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+@mixin flexbox-justify-flexend() {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+@mixin flexbox-align-content-stretch() {
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+}
+@mixin flexbox-align-items-start() {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+@mixin flexbox-align-self-stretch() {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+@mixin flexbox-align-self-end() {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+@mixin flexbox-align-self-start() {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+
+@mixin flexbox-align-items($n) {
+  -webkit-align-items: $n;
+  -ms-flex-align: $n;
+  align-items: $n;
+}
+@mixin flexbox-align-order($n) {
+  -webkit-order: $n;
+  -ms-flex-order: $n;
+  order: $n;
+}
+@mixin flexbox-item-flex($n1, $n2, $min) {
+  -webkit-flex: $n1 $n2 $min;
+  -ms-flex: $n1 $n2 $min;
+  flex: $n1 $n2 $min;
+}
+
+
+// Colors
+// -------------------------------
+
+@each $color-name, $color in $colors {
+  .color#{$color-name} {  color: #{$color};  }
+  .bg#{$color-name} {  background-color: #{$color};  }
+  .border#{$color-name} {  border-color: #{$color};  }
+  .stroke#{$color-name} {  stroke: #{$color};  }
+  .fill#{$color-name} {  fill: #{$color};  }
+}
+
+// Deco
+// -------------------------------
+
+// BORDERS
+// -------------------------------
+
+@for $i from 0 through 10 {
+  .border-#{$i} { border: #{$i}px solid;}
+  .border-bottom-#{$i} { border-bottom: #{$i}px solid;}
+  .border-left-#{$i} { border-left: #{$i}px solid;}
+  .border-right-#{$i} { border-right: #{$i}px solid;}
+}
+
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

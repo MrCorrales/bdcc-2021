@@ -1,0 +1,13 @@
+#Scrollbar {
+  position: fixed;
+  bottom: 0;
+  left: var(--grid-gap);
+  opacity: 0;
+
+  .progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-sans-title();
+  }
+}

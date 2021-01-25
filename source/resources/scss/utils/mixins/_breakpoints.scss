@@ -1,0 +1,182 @@
+// Breakpoints for each query
+$smartphone: 600px;
+$tabletPortrait: 780px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+$xlargeScreen: 1650px;
+
+//
+$menuHideSize: 550px;
+@mixin respondTo($media) {
+  @if $media == smartphone {
+    @media (max-width: $smartphone) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+  }
+  @else if $media == smallScreen {
+    @media (max-width: $desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+}
+
+$breakpoints: (
+        's':  ( max-width:  $smartphone ),
+        't':  ( max-width: $tabletPortrait ),
+        'tl':  ( max-width: $tabletLandscape ),
+        'm':  ( max-width: $desktop ),
+        'l':  ( min-width: $largeScreen ),
+        'xl':  ( min-width: $xlargeScreen ),
+) !default;
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin font-size($normal, $sizes:null) {
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename == "l" {
+        @include respond-to($sizename) {
+          font-size: $size;
+        }
+      }
+    }
+
+    @each $sizename, $size in $sizes {
+      @if $sizename == "xl" {
+        @include respond-to($sizename) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  font-size: $normal;
+
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename != "xl" and $sizename != "l" {
+        @include respond-to($sizename) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}
+
+@mixin font-size-em($normal, $sizes:null) {
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename == "l" {
+        @include respond-to($sizename) {
+          font-size: $size;
+        }
+      }
+    }
+
+    @each $sizename, $size in $sizes {
+      @if $sizename == "xl" {
+        @include respond-to($sizename) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  font-size: em($normal);
+
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename != "xl" and $sizename != "l" {
+        @include respond-to($sizename) {
+          font-size: em($size);
+        }
+      }
+    }
+  }
+}
+
+@mixin font-size-rem($normal, $sizes:null) {
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename == "l" {
+        @include respond-to($sizename) {
+          font-size: rem($size);
+        }
+      }
+    }
+
+    @each $sizename, $size in $sizes {
+      @if $sizename == "xl" {
+        @include respond-to($sizename) {
+          font-size: rem($size);
+        }
+      }
+    }
+  }
+
+  font-size: rem($normal);
+
+  @if $sizes {
+    @each $sizename, $size in $sizes {
+      @if $sizename != "xl" and $sizename != "l" {
+        @include respond-to($sizename) {
+          font-size: rem($size);
+        }
+      }
+    }
+  }
+}
+
+@mixin __font-size($normal, $xl:null, $l:null, $m:null, $s:null, $xs:null) {
+  font-size: em($normal);
+
+  @if $l {
+    @include respond-to("L") {
+      font-size: em($l);
+    }
+  }
+
+  @if $xl {
+    @include respond-to("XL") {
+      font-size: em($xl);
+    }
+  }
+
+  @if $m {
+    @include respond-to("tabletLandscape") {
+      font-size: em($m);
+    }
+  }
+
+  @if $s {
+    @include respond-to("tabletPortrait") {
+      font-size: em($s);
+    }
+  }
+
+  @if $xs {
+    @include respond-to("smartphone") {
+      font-size: em($xs);
+    }
+  }
+}

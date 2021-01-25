@@ -1,0 +1,205 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-advice __page wrap">
+    <header class="header-double-title" data-header-mod="--default">
+        <svg viewBox="0 0 1440 350" aria-hidden="true">
+            <use xlink:href="./images/svg/ac78-svg.svg#titles__advice"></use>
+        </svg>
+        <h1 class="bdcc-title-small --right --bold --width-fixed">ASESORÍA Y ORIENTACIÓN</h1>
+        <div class="summary">
+            <p>¿Necesitas consejo u orientación?</p>
+            <p>¿Estás buscando herramientas de reflexión en torno a tu proyecto, empresa u organización?</p>
+            <p>¿Tienes alguna duda o pregunta relativa a las herramientas o programas de ayuda?</p>
+            <p>Con nuestra experiencia y nuestra red, te apoyamos en todas las fases de tu iniciativa empresarial mediante asesoramiento personalizado.</p>
+        </div>
+    </header>
+
+    <h2 class="page-advice__blockuote">
+        TE OFRECEMOS ASESORÍA Y ORIENTACIÓN PARA TU EMPRESA O PROYECTO CULTURAL O CREATIVO.
+    </h2>
+
+    <div class="block-image-rounded">
+        <%= partial "components/basics/image", locals: {
+        preload: false,
+        image: "/images/images/test-advice.jpg",
+        width: 1382,
+        height: 922,
+        alt: "EO",
+        ratio: 1,
+        heightMultiplicator: 1,
+        figureClass: 'media-holder',
+        imageTags: '',
+        } %>
+    </div>
+
+    <section class="block-advice">
+        <!-- <div class="block-image-rounded">
+            <%= partial "components/basics/image", locals: {
+            preload: false,
+            image: "/images/images/test-advice.jpg",
+            width: 1382,
+            height: 922,
+            alt: "EO",
+            ratio: 1,
+            heightMultiplicator: 1,
+            figureClass: 'media-holder',
+            imageTags: '',
+            } %>
+        </div> -->
+
+        <div class="page-advice__blockuote">
+            Anímate a completar el siguiente formulario para contactarnos y podamos ayudarte en tu proyecto :
+        </div>
+
+        <!-- <h2 class="title-big-edge">
+            <span>FORMULARIO</span> <span>DE CONTACTO</span>
+        </h2> -->
+
+        <div class="form-advice-holder">
+            <form class="default__form"
+                  data-inputs-nok="Error en los campos"
+                  data-mssg-ok="Formulario enviado correctamente"
+                  data-mssg-nok="Error en el envio">
+                <div class="form-advice">
+                    <div class="form-advice__step">
+                        <h3 class="title">DATOS CONTACTO <span class="value">01/03</span></h3>
+
+                        <div class="default__form__textfield">
+                            <label for="advice_form_name"><%= t(:form_name) %></label>
+                            <input type="text" id="advice_form_name" name="name" placeholder="<%= t(:form_name__placeholder) %>" data-form-required/>
+                        </div>
+                        <div class="default__form__textfield">
+                            <label for="advice_form_email"><%= t(:form_email) %></label>
+                            <input type="email" id="advice_form_email" name="name" placeholder="<%= t(:form_email__placeholder) %>" data-form-required/>
+                        </div>
+                    </div>
+
+                    <div class="form-advice__step">
+                        <h3 class="title">DATOS EMPRESA <span class="value">02/03</span></h3>
+                        <div class="default__form__textfield">
+                            <label for="advice_form_company">Empresa</label>
+                            <input type="text" id="advice_form_company" name="name" placeholder="Nombre de la empresa" data-form-required/>
+                        </div>
+
+                        <div class="form-advice__radios">
+                            <div class="title default__form__label" for="advice_form_company">Elige el sector</div>
+
+                            <div class="form-advice__radios__group">
+                                <div class="title-group">CULTURA</div>
+                                <ul>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-1" name="form-sector" value="sector-1">
+                                            <label for="form-check-1">ARTESANÍA</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-2" name="form-sector" value="sector-1">
+                                            <label for="form-check-2">ARQUITECTURA</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-3" name="form-sector" value="sector-1">
+                                            <label for="form-check-3">CONTENIDOS DIGITALES</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-4" name="form-sector" value="sector-1">
+                                            <label for="form-check-4">DISEÑO</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-5" name="form-sector" value="sector-1">
+                                            <label for="form-check-5">GASTRONOMÍA</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-6" name="form-sector" value="sector-1">
+                                            <label for="form-check-6">INDUSTRIA DE LA LENGUA</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-advice__radios__group">
+                                <div class="title-group">CREATIVIDAD</div>
+                                <ul>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-7" name="form-sector" value="sector-1">
+                                            <label for="form-check-7">ARTES ESCÉNICAS</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-8" name="form-sector" value="sector-1">
+                                            <label for="form-check-8">ARTES VISUALES</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-9" name="form-sector" value="sector-1">
+                                            <label for="form-check-9">EDICIÓN  Y MEDIOS VISUALES</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-10" name="form-sector" value="sector-1">
+                                            <label for="form-check-10">MÚSICA</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="default__form__checkbox">
+                                            <input type="radio" id="form-check-11" name="form-sector" value="sector-1">
+                                            <label for="form-check-11">PATRIMONIO CULTURAL</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-advice__step">
+                        <h3 class="title">CONSULTA <span class="value">03/03</span></h3>
+                        <div class="default__form__textfield">
+                            <label for="advice_form_subject">Consulta</label>
+                            <input type="text" id="advice_form_subject" name="name" placeholder="Tema de la consulta" data-form-required/>
+                        </div>
+
+                        <div class="default__form__textarea">
+                            <label for="advice_form_description">Descripción</label>
+                            <textarea id="advice_form_description" name="name" placeholder="Descripción de la consulta" rows="10" cols="50"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-advice__submit-holder">
+                    <div class="submit-holder">
+                        <button type="submit" class="link-button --arrow-right --font-mid">
+                            Inscribirse
+                        </button>
+                    </div>
+                    <div class="default__form__checkbox">
+                        <input type="checkbox" id="form-check-legal-orientation" name="form-check-legal-orientation" data-form-required=true>
+                        <label for="form-check-legal-orientation"><%= t(:form_privacy) %></label>
+                    </div>
+                    <div class="default__form__checkbox">
+                        <input type="checkbox" id="form-orientation-newsletter" name="form-orientation-newsletter" data-form-required=true>
+                        <label for="form-orientation-newsletter">Deseo mantenerme informado sobre las noticias y actividades del BDCC.</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</article>

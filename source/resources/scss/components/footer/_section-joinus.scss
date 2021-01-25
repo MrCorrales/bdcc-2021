@@ -1,0 +1,118 @@
+.section-join-us {
+  background: var(--red-bdcc);
+  color: var(--black);
+  padding: 0 0 var(--padding-xs);
+}
+
+.section-join-us .title {
+  --font-size:17vw;
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  font-weight: 200;
+  letter-spacing: calc(var(--font-size) * -.1);
+  text-transform: uppercase;
+  margin: 0 0 -0.25em;
+  padding: 0 0 0 0;
+
+  > div {
+    @include basic-marquee();
+    --animation: 5s;
+  }
+}
+
+.section-join-us > p {
+  --font-size: #{(30px / 16px) * 1rem};
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  font-weight: 400;
+  letter-spacing: calc(var(--font-size) * -.025);
+  line-height: calc(var(--font-size) * .9);
+  margin: 0 var(--padding-m) var(--padding-xs);
+
+  text-transform: uppercase;
+}
+
+.section-join-us .default__form {
+  margin: 0 var(--padding-m);
+
+  [type="submit"] {
+    margin: 0 0 1em;
+  }
+}
+
+.section-join-us__submit-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  > div {
+    &:nth-child(1) {
+      flex: 1 0 auto;
+      max-width: rem(270px);
+    }
+
+    &:nth-child(2) {
+      padding-left: var(--padding-xs);
+      flex: 1 0 auto;
+      max-width: rem(170px);
+    }
+  }
+}
+
+
+.section-join-us .logo-bdcc {
+  position: relative;
+  display: block;
+  max-width: rem(227px);
+  height: auto;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .section-join-us .title {
+    --font-size: 8vw;
+
+    .title-marquee {
+      display: block;
+      text-align: center;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-join-us .title {
+    padding-top: 0;
+  }
+
+  .section-join-us > p {
+    margin-left: var(--padding-xs);
+    margin-right: var(--padding-xs);
+  }
+
+  .section-join-us .default__form {
+    margin: 0 var(--padding-xs);
+
+    [type="submit"] {
+      margin: 0 0 1em;
+    }
+  }
+
+  .section-join-us .logo-bdcc {
+    display: none;
+  }
+}
+
+@media (max-width: $smartphone) {
+  .section-join-us {
+    overflow: hidden;
+  }
+  .section-join-us .title {
+    --font-size: 32vw;
+  }
+}

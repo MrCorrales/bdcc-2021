@@ -1,0 +1,45 @@
+<form class="form-contact __form"
+      data-subject="Primt"
+      data-href="https://cuchillo-mailforms.herokuapp.com/messages"
+      data-token="f88fa4cd-a7a6-4641-af22-686244d9a164"
+      data-inputs-nok="<%= t(:form_inputs_nok) %>"
+      data-mssg-ok="<%= t(:form_ok) %>"
+      data-mssg-nok="<%= t(:form_nok) %>"
+      data-type='mailforms'>
+
+    <div class="form-contact__input __movable">
+        <label for="form_name"><%= t(:form_name_label) %></label>
+        <input type="text" id="form_name" name="name" placeholder="<%= t(:form_name_example) %>" data-form-required="true"/>
+    </div>
+
+    <div class="form-contact__input __movable">
+        <label for="form_mail"><%= t(:form_email_label) %></label>
+        <input type="email" id="form_mail" name="email" placeholder="<%= t(:form_email_example) %>" data-form-required="true"/>
+    </div>
+
+    <div class="form-contact__input __movable">
+        <label for="form_mail"><%= t(:form_phone_label) %></label>
+        <input type="text" id="form_phone" name="phone" placeholder="<%= t(:form_phone_example) %>"/>
+    </div>
+
+    <div class="form-contact__textarea __movable">
+        <label for="form_body"><%= t(:form_body_label) %></label>
+        <textarea id="form_body" name="body" placeholder="<%= t(:form_body_example) %>" rows="6" ></textarea>
+    </div>
+
+    <div class="form-contact__check">
+        <input type="checkbox" id="form-check-legal" name="form-check-legal" data-form-required=true>
+        <label for="form-check-legal"><%= t(:form_legal) %> <a href="politica-de-privacidad.html" rel="nofollow" target="_blank">política de privacidad<sup aria-hidden="true">↗</sup></a></label>
+    </div>
+
+    <button class="form-contact__submit __submit" type="submit">
+        <div class="basic-marquee --invert">
+            <div>→ → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → <span class="aux" aria-hidden="true">→ → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → → </span></div>
+        </div>
+        <div class="text">
+            <span>
+                <%= t(:form_submit_label) %>
+            </span>
+        </div>
+    </button>
+</form>

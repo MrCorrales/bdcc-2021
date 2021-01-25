@@ -1,0 +1,210 @@
+%selector-link-button {
+  --border: 1px;
+  --height: 1.875rem; // rem(30px);
+  --height-open: calc(var(--height) * (var(--n-options) + 0));
+  --arrow-open: calc(var(--height-open) - var(--height));
+  --font-size: var(--font-size-small);
+  --border-radius: calc(var(--height) * .5);
+
+  --time-show:.2s;
+  --time-hide:.2s;
+
+
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:var(--black);
+  /*--colorHover: var(--white);
+  --bgHover: var(--black);*/
+
+  @include basic-a();
+  position: relative;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  color: var(--color);
+
+  padding: .2em 2em 0;
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .value {
+    position: relative;
+  }
+
+  ////FONDO
+  &:before {
+    @include pseudo-element-absolute();
+    top:0;
+    left:0;
+    width: 100%;
+    height: var(--height);
+    border: var(--border) solid var(--border-color);
+    background: var(--bg);
+    border-radius: var(--border-radius);
+    transition: height var(--time-hide) var(--ease-out-quad);
+  }
+
+  /////ARROW
+  &:after {
+    @include pseudo-element-absolute();
+    content: '↓';
+    display: block;
+    top: calc(50% - .45em);
+    right: .9em;
+    transition: transform var(--time-hide) var(--ease-out-quad), opacity var(--time-hide) var(--ease-out-quad);
+  }
+
+
+  /////LISTADO
+  > ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top:0;//100%;
+    left:0;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+
+    li {
+      overflow: hidden;
+    }
+
+    a {
+      @include basic-a();
+      border-radius: var(--border-radius);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--height);
+      color: currentColor;
+      padding: .2em 0 0 0;
+      /////HOVER
+      //transition: color .1s var(--ease-out-quad), background .0s var(--ease-out-quad);
+
+      &:hover {
+        border: var(--border) solid var(--border-color);
+        background-color: var(--white);
+        color: var(--black);
+      }
+
+      &.--selected {
+        //display: none;
+      }
+    }
+  }
+
+  /////HOVER
+  //transition: color .1s var(--ease-out-quad), background .0s var(--ease-out-quad);
+
+  //transform-origin: center center;
+
+  &:hover {
+    color: var(--white);
+
+    .value {
+      display: none;
+    }
+
+    //FONDO
+    &:before {
+      height: var(--height-open);
+      transition: height var(--time-show) var(--ease-out-quad);
+      //backdrop-filter: blur(10px);
+      background-color: var(--black);
+    }
+    //ARROW
+    &:after {
+      opacity: 0;
+      transform: translateY(var(--arrow-open));
+      transition: transform var(--time-show) var(--ease-out-quad), opacity .2s var(--ease-out-quad);
+    }
+    ul {
+      pointer-events: all;
+      opacity: 1;
+      transition: opacity .2s var(--ease-out-quad) .1s;
+
+      a {
+
+      }
+    }
+
+    //color: var(--colorHover);
+    //background: var(--bgHover);
+
+    //transition: color .0s var(--ease-out-quad), background .2s var(--ease-out-quad);
+  }
+
+  &.--disabled {
+    pointer-events: none;
+    color: var(--color) !important;
+
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:before {
+      height: var(--height) !important;
+      background: var(--bg) !important;
+    }
+
+    ul {
+      opacity: 0;
+      transition: opacity .1s var(--ease-out-quad);
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    * > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.selector-link-button {
+  @extend %selector-link-button;
+}
+@media (prefers-reduced-motion) {
+  .selector-link-button {
+    color: var(--white);
+
+    .value {
+      background-color: var(--black);
+    }
+
+    //FONDO
+    &:before {
+      height: var(--height-open);
+      transition: height var(--time-show) var(--ease-out-quad);
+      //backdrop-filter: blur(10px);
+      background-color: var(--black);
+    }
+    //ARROW
+    &:after {
+      opacity: 0;
+      transform: translateY(var(--arrow-open));
+      transition: transform var(--time-show) var(--ease-out-quad), opacity .2s var(--ease-out-quad);
+    }
+    ul {
+      pointer-events: all;
+      opacity: 1;
+      transition: opacity .2s var(--ease-out-quad) .1s;
+
+      a {
+        background-color: var(--black);
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,181 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-ayudas __page wrap" data-page="ayudas">
+<header class="header-double-title" data-header-mod="--default">
+        <svg viewBox="0 0 1440 350" aria-hidden="true">
+            <use xlink:href="./images/svg/ac78-svg.svg#titles__aids"></use>
+        </svg>
+        <h1 class="bdcc-title-small --right --bold --width-fixed">MAPA DE AYUDAS</h1>
+        <div class="summary">
+            <p>Descubre los programas disponibles que responden a los retos de tu empresa o proyecto, como por ejemplo el desarrollo de estrategias de gestión, innovación e internacionalización. Conoce las posibilidades que te ofrece Basque DCC, y <a href="mailto:info@basquedcc.eus" target="_blank">contáctanos</a></p>
+            <p>Desde el Basque DCC ponemos a tu disposición un mapa de ayudas en función de tus objetivos:</p>
+        </div>
+    </header>
+
+    <ul class="block-ul-rounded" aria-label="Tipo de ayudas">
+        <li>
+            <a href="#SectionAids" data-checkbox-name="nacer-01,nacer-02" cursor-follow data-power=".1">
+                <div class="category">Nacer</div>
+                <h2 class="title">Creación de empresas y acciones de emprendimiento</h2>
+                <p>Ayudas dirigidas a la creación de empresas y acciones de emprendimiento.</p>
+            </a>
+        </li>
+        <li>
+            <a href="#SectionAids" data-checkbox-name="crecer-01,crecer-02,crecer-03" cursor-follow data-power=".1">
+                <div class="category">CRECER</div>
+                <h2 class="title">Cooperación, crecimiento e internacionalización</h2>
+                <p>Ayudas destinadas a estrategias de crecimiento (cooperación, crecimiento e internacionalización).</p>
+            </a>
+        </li>
+        <li>
+            <a href="#SectionAids" data-checkbox-name="consolidar-01,consolidar-02" cursor-follow data-power=".1">
+                <div class="category">Consolidar</div>
+                <h2 class="title">Desarrollo de capacidades, innovación y competitividad</h2>
+                <p>Programas de apoyo a la excelencia empresarial (Desarrollo de capacidades, innovación y competitividad).</p>
+            </a>
+        </li>
+        <li>
+            <a href="#SectionAids" data-checkbox-name="financiar-01,financiar-02" cursor-follow data-power=".1">
+                <div class="category">FINANCIAR</div>
+                <h2 class="title">Apoyo a las inversiones y vías de financiación</h2>
+                <p>Programas de apoyo a la financiación (inversiones y vías de financiación).</p>
+            </a>
+        </li>
+        <li>
+            <a href="#SectionAids" data-checkbox-name="covid-01" cursor-follow data-power=".1">
+                <div class="category">Covid-19</div>
+                <h2 class="title">Ayudas Covid-19</h2>
+                <p>Programas de apoyo a la financiación (inversiones y vías de financiación).</p>
+            </a>
+        </li>
+    </ul>
+
+    <h2 class="title-big-edge">
+        LISTADODE AYUDAS
+    </h2>
+
+    <!-- class --loading para poner indicador de carga -->
+    <!-- class --loaded si esta todo cargado. Quita boton de cargar mas -->
+    <section class="section-aids" id="SectionAids">
+        <div class="section-aids__filters" data-acordion data-sticky>
+            <h3 class="bdcc-title-small --margin-xs">Filtros</h3>
+            <button class="section-aids__filters__toggle" data-acordion-toogle>Filtros</button>
+            <!-- SECTOR -->
+            <div class="content" data-acordion-group>
+                <div class="section-aids__filters__block">
+                    <h4 class="title">
+                        Objetivo
+                    </h4>
+                    <ul>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Creación de empresas", name:"nacer-01"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Emprendizaje", name:"nacer-02"} %></li>
+
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Cooperación", name:"crecer-01"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Crecimiento", name:"crecer-02"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Internacionalización", name:"crecer-03"} %></li>
+
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Competitividad", name:"consolidar-01"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Innovación", name:"consolidar-02"} %></li>
+
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Financiacion", name:"financiar-01"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Inversión", name:"financiar-02"} %></li>
+
+
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Covid-19", name:"covid-01"} %></li>
+                    </ul>
+                </div>
+                <!-- SECTOR -->
+                <div class="section-aids__filters__block">
+                    <h4 class="title">
+                        Sector
+                    </h4>
+                    <ul>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "ICC"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Artesanía"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "AAEE"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Libro"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Música"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Audiovisuales"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Publicidad"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Arquitectura"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Moda"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Ind. Lengua"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Videojuegos"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Diseño"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Gastronomía"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "AAVV"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Otros"} %></li>
+                    </ul>
+                </div>
+                <!-- AMBITO TERRITORIAL -->
+                <div class="section-aids__filters__block">
+                    <h4 class="title">
+                        Ambito territorial
+                    </h4>
+                    <ul>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "General"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "CAE"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Araba"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Bizkaia"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Gipuzkoa"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Vitoria-Gasteiz"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Bilbao"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Donostia"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Estado"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Europa"} %></li>
+                        <li><%= partial "components/_checkbox-rounded", locals: {text: "Otros"} %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-aids__aids" aria-live="polite">
+            <h3 class="bdcc-title-small --margin-xs">Ayudas (83)</h3>
+            <ul>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids--close", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids--close", locals: {} %>
+                </li>
+                <li>
+                    <%= partial "components/_acordion-aids--close", locals: {} %>
+                </li>
+            </ul>
+
+            <div class="load-more">
+                <a class="link-button --text-center" href="news.html">
+                    <span class="default-text">Cargar más</span>
+                    <span class="loading-text">Cargando</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>

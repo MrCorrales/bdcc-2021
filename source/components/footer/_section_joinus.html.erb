@@ -1,0 +1,40 @@
+<section class="section-join-us">
+    <h2 class="title">
+        <div class="title-marquee"><%= t(:joinus_title) %><span class="aux" aria-hidden="true" data-text="<%= t(:joinus_title) %>"><%= t(:joinus_title) %></span></div>
+    </h2>
+    <p><%= t(:joinus_text) %></p>
+    <form class="default__form"
+        data-inputs-nok="Error en los campos"
+        data-mssg-ok="Formulario enviado correctamente"
+        data-mssg-nok="Error en el envio">
+
+    <div class="default__form__textfield">
+            <label for="joinus_form_name"><%= t(:form_name) %></label>
+            <input type="text" id="joinus_form_name" name="name" placeholder="<%= t(:form_name__placeholder) %>" data-form-required/>
+        </div>
+        <div class="default__form__textfield">
+            <label for="joinus_form_company"><%= t(:form_company) %></label>
+            <input type="text" id="joinus_form_company" name="name" placeholder="<%= t(:form_company__placeholder) %>" data-form-required/>
+        </div>
+        <div class="default__form__textfield">
+            <label for="joinus_form_email"><%= t(:form_email) %></label>
+            <input type="email" id="joinus_form_email" name="name" placeholder="<%= t(:form_email__placeholder) %>" data-form-required/>
+        </div>
+        <div class="section-join-us__submit-holder">
+            <div>
+                <button type="submit" class="link-button --arrow-right --font-xs">
+                    <%= t(:joinus_button) %>
+                </button>
+                <div class="default__form__checkbox">
+                    <input type="checkbox" id="form-check-legal-join-us" name="condiciones-dos" data-form-required="true">
+                    <label for="form-check-legal-join-us"><%= t(:form_privacy) %></label>
+                </div>
+            </div>
+            <div class="section-join-us__submit-holder__logo">
+                <svg class="logo-bdcc" viewBox="0 0 174 150" aria-label="BDCC Basque District Of Culture And Creativity">
+                    <use xlink:href="./images/svg/ac78-svg.svg#logo-basquedcc-square-small-text"></use>
+                </svg>
+            </div>
+        </div>
+    </form>
+</section>

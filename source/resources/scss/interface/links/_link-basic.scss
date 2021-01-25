@@ -1,0 +1,33 @@
+%link-basic {
+  @include basic-a();
+  position: relative;
+  display: inline-block;
+
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  text-decoration: underline;
+
+  &.--arrow-left {
+    display: inline-block;
+  }
+
+  &[target="_blank"]:after {
+    content: ' ↗';
+  }
+
+  &[target="_self"]:after {
+    content: '↘';
+  }
+}
+
+@mixin link-basic($color:$black, $barColor:$white) {
+  @extend %link-basic;
+}
+
+.link-basic {
+  @extend %link-basic;
+}

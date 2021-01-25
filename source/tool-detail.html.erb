@@ -1,0 +1,110 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-tool-detail __page wrap" data-bg="--grey-bdcc" data-page="tool-detail">
+    <section class="section-tool-detail">
+        <header>
+            <a class="link-arrow --arrow-left" href="tools.html" data-back target="_self">back</a>
+
+            <ul>
+                <li><a href="#informacion">información</a></li>
+                <li><a href="#instrucciones">Instrucciones</a></li>
+                <li><a href="#inscripcion">Inscripción</a></li>
+            </ul>
+
+            <div class="category">
+                <span class="text">prop. intelectual</span>
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                    <!-- ADMIN Y FINANZAS -->
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_adm_finanzas"></use>
+                    <!-- EVOLUCION EMPRESA
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_empresa"></use> -->
+                    <!-- ENTORNO
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_entorno"></use> -->
+                    <!-- INTERNACIONALIZACION
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_internacionalizacion"></use> -->
+                    <!-- MARKETING
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_marketing"></use> -->
+                    <!-- MODELO DE NEGOCIO
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_negocio"></use> -->
+                    <!-- PROPIEDAD INTELECTUAL
+                    <use xlink:href="./images/svg/tools/tools.svg#icon_prop_intelectual"></use> -->
+                </svg>
+            </div>
+        </header>
+
+        <div class="content" id="maincontent">
+            <h1 class="title">MAPA INTERACTIVO DE PROPIEDAD INTELECTUAL</h1>
+            <h2 class="subtitle" id="informacion" data-offscreen-anchor="100">información</h2>
+            <hr>
+            <p><%= lorem.paragraph %></p>
+            <p><%= lorem.paragraph %></p>
+            <h2 class="subtitle" id="instrucciones"  data-offscreen-anchor="100">Instrucciones</h2>
+            <hr>
+            <p><%= lorem.paragraph %></p>
+            <p><%= lorem.paragraph %></p>
+            <h2 class="subtitle" id="inscripcion" data-offscreen-anchor="100">Inscripción</h2>
+            <hr>
+            <p><%= lorem.paragraph %></p>
+            <ul class="ul-links">
+                <li><a class="link-arrow" href="tools.html" target="_blank">Link a mapa interactivo</a></li>
+                <li><a class="link-arrow" href="tools.html" target="_blank">Link a mapa interactivo</a></li>
+                <li><a class="link-arrow" href="tools.html" target="_blank">Link a mapa interactivo</a></li>
+                <li><a class="link-arrow" href="tools.html" download>Link a mapa interactivo</a></li>
+            </ul>
+            <form class="default__form"
+                  data-inputs-nok="Error en los campos"
+                  data-mssg-ok="Formulario enviado correctamente"
+                  data-mssg-nok="Error en el envio">
+                <div class="default__form__textfield">
+                    <label for="joinus_form_name"><%= t(:form_name) %></label>
+                    <input type="text" id="joinus_form_name" name="name" placeholder="<%= t(:form_name__placeholder) %>" data-form-required/>
+                </div>
+                <div class="default__form__textfield">
+                    <label for="joinus_form_company"><%= t(:form_company) %></label>
+                    <input type="text" id="joinus_form_company" name="name" placeholder="<%= t(:form_company__placeholder) %>" data-form-required/>
+                </div>
+                <div class="default__form__textfield">
+                    <label for="joinus_form_email"><%= t(:form_email) %></label>
+                    <input type="text" id="joinus_form_email" name="name" placeholder="<%= t(:form_email__placeholder) %>" data-form-required/>
+                </div>
+                <div class="section-tool-detail__submit-holder">
+                    <div class="submit-holder">
+                        <button type="submit" class="link-button --arrow-right --font-xs">
+                            Inscribirse
+                        </button>
+                    </div>
+                    <div class="default__form__checkbox">
+                        <input type="checkbox" id="form-check-legal" name="form-check-legal" data-form-required=true>
+                        <label for="form-check-legal"><%= t(:form_privacy) %></label>
+                    </div>
+                </div>
+            </form>
+
+            <div class="section-tool-detail__banner-holder">
+                <div class="section-tool-detail__banner">
+                    <svg viewBox="0 0 230 190" aria-hidden="true">
+                        <use xlink:href="./images/svg/ac78-svg.svg#title_oval_help"></use>
+                    </svg>
+                    <div class="title">
+                        ¿NECESITAS AYUDA CON ESTA HERRAMIENTA?
+                    </div>
+                    <a class="link-button --arrow-in --font-xs" href="#joinus" target="_self" cursor-follow data-center="y" data-power=".1">
+                        PONTE EN CONTACTO CON BDCC
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%= partial "components/_block-next", locals: {
+        title: "Next tool",
+        ga: "click,herramienta, MODELOS DE CONTRATOS DE PROPIEDAD INTELECTUAL",
+        text: "MODELOS DE CONTRATOS DE PROPIEDAD INTELECTUAL",
+        url: "tool-detail.html",
+    } %>
+</article>

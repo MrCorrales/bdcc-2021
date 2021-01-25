@@ -1,0 +1,36 @@
+<!-- GOTO MAIN -->
+<a class="goto-main link-button" href="#maincontent">Saltar contenido principal</a>
+<!-- END GOTO MAIN -->
+<header id="Header" class="--hide-bdcc --loading-styles">
+    <div class="header__bg"></div>
+    <a class="header__title" href="./index.html" target="_self">
+        <svg class="logo-bdcc" viewBox="0 0 94 30" aria-label="BDCC">
+            <use xlink:href="./images/svg/ac78-svg.svg#logo-basquedcc-horizontal-small"></use>
+        </svg>
+        <div class="title">Basque District Of Culture And Creativity</div>
+        <svg class="logo-euskadi-eus" viewBox="0 0 156 16" aria-label="Euskadi.eus">
+            <use xlink:href="./images/svg/ac78-svg.svg#logo-euskadi-eus"></use>
+        </svg>
+    </a>
+    <nav class="header__nav">
+        <a class="link-button --text-center" href="tools.html" target="_self" cursor-follow data-power=".1" data-rotation="0">
+            <%= t(:herramientas) %>
+        </a>
+        <a class="link-button --text-center" href="ayudas.html" target="_self" cursor-follow data-power=".1" data-rotation="0">
+            <%= t(:ayudas) %>
+        </a>
+        <div class="selector-link-button" cursor-follow data-power="0.1" data-rotation="0">
+            <div class="value"><%= t(:euskara) %></div>
+            <ul>
+                <li><a href="./index.html" data-internal class="--selected"><%= t(:euskara) %></a></li>
+                <li><a href="./index.html" data-internal><%= t(:castellano) %></a></li>
+                <li><a href="./index.html" data-internal><%= t(:ingles) %></a></li>
+            </ul>
+        </div>
+        <button class="button-toggle-menu" data-toggle-sidemenu aria-label="<%= t(:toggle_menu) %>">
+            <svg viewBox="0 0 30 30">
+                <use xlink:href="./images/svg/ac78-svg.svg#icon-plus"></use>
+            </svg>
+        </button>
+    </nav>
+</header>

@@ -1,0 +1,153 @@
+///
+
+@keyframes bar-in {
+  0%   {
+    transform: translate3d(0, 0, 0) scale3d(0, 1, 1);
+  }
+  100%  {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bar-out {
+  0%   {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  100%  {
+    transform: translate3d(100%, 0, 0) scale3d(0, 1, 1);
+  }
+}
+
+/* A underline */
+
+@keyframes underline-none {
+  0%   {
+    left:0px;
+    width: 0%;
+  }
+  100%  {
+    left:0px;
+    width: 0%;
+  }
+}
+
+@keyframes underline-in {
+  0%   {
+    left:0px;
+    width: 0%;
+  }
+  100%  {
+    width: 100%;
+  }
+}
+
+@keyframes underline-out {
+  0%   {
+    left:0px;
+    width: 100%;
+  }
+  100%  {
+    left:100%;
+    width: 0%;
+  }
+}
+
+@keyframes underline-linkctive {
+  0%   {
+    left:0px;
+    width: 100%;
+  }
+  100%  {
+    left:0px;
+    width: 100%;
+  }
+}
+
+@keyframes underline-disabled {
+  0%   {
+    left:0px;
+    width: 0%;
+  }
+  100%  {
+    left:0px;
+    width: 0%;
+  }
+}
+
+@keyframes underline-inout {
+  0%   {
+    left:0px;
+    width: 0%;
+  }
+  47%  {
+    left:0px;
+    width: 100%;
+  }
+  50% {
+    left:0px;
+    width: 100%;
+  }
+  97% {
+    left:100%;
+    width: 0%;
+  }
+}
+
+/* DEFAULT */
+
+a > .content {
+  position: relative;
+}
+
+@mixin accessible() {
+  & {
+    .__accessible & {
+      @content;
+    }
+  }
+}
+
+
+@mixin basic-a() {
+  outline: 0;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  @include accessible() {
+    &:focus {
+      outline:  #08f auto 2px;
+    }
+  }
+}
+
+@mixin default-a {
+  @include basic-a();
+  color: currentColor;
+  text-decoration: underline;
+  &:hover {
+    color: currentColor;
+  }
+  &[target="_blank"]:after {
+    content: '↗';
+  }
+  &[target="_self"]:after {
+    content: '↘';
+  }
+}
+
+
+%no-effect-link {
+  outline: 0;
+  text-decoration: none;
+  &:hover {  text-decoration: none;  }
+}
+
+@mixin no-effect-link() {
+  @extend %no-effect-link;
+}
+
+a > *,
+button > * {
+  pointer-events: none;
+}

@@ -1,0 +1,136 @@
+
+// Cookies
+// -------------------------------
+///VARS
+
+#Message {
+  .palette-white &,
+  .palette-secondary &,
+  .palette-primary & {
+    --bg-color: var(--black);
+    --color: var(--primary);
+  }
+
+  .palette-black & {
+    --bg-color: var(--primary);
+    --color: var(--black);
+  }
+
+  &.__success {
+    --bg-color: var(--success);
+    --color: var(--black);
+  }
+
+  &.__error {
+    --bg-color: var(--error);
+    --color: var(--black);
+  }
+
+  &[aria-expanded='false'] {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+
+#Message {
+  position: fixed;
+  @include z-index($z-index-windows);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  cursor: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: rem(20px) rem(20px);
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid currentColor;
+  background-color: var(--bg-color);
+  color: var(--color);
+
+  .content {
+    flex: 1 0 50%;
+    display: block;
+    position: relative;
+  }
+
+  .controls {
+    flex: 1 0 160px;
+    min-width: 160px;
+    padding-left: 10px;
+    text-align: center;
+  }
+}
+
+//TEXTO
+#Message p {
+  @include P--default();
+  margin: 0;
+  padding-bottom: 0;
+
+  b, strong {
+    font-weight: 400;
+  }
+
+  a {
+    @include basic-a();
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
+
+///BOTON
+#Message .btn-ok {
+  @include link-button();
+  --bg: transparent;
+  --color:currentColor;
+  --colorHover: var(--bg-color);
+  --bgHover: var(--black);
+  --font-size: var(--font-size-mid) !important;
+  --height: #{(60px / 16px) * 1rem} !important;
+  --right-arrow:0 !important;
+
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: $smartphone) {
+  #Message {
+
+    padding: 16px 10px;
+
+    .content {
+      width: 100%;
+    }
+
+    .controls {
+      width: 100%;
+      min-width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 1em;
+    }
+
+    .btn-ok {
+      width: 100%;
+    //  font-size: $font-size-small;
+    }
+
+    .btn-nok {
+      margin: 0;
+      width: 35%;
+      padding: 15px 30px;
+    //  font-size: $font-size-xsmall;
+    }
+  }
+}

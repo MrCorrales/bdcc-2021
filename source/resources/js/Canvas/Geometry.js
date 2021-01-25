@@ -1,0 +1,1 @@
+const BASIC_PLANE = new THREE.PlaneBufferGeometry(1, 1, 80, 80);

@@ -1,0 +1,47 @@
+<section class="section-services" id="maincontent" scroll-item data-class="services">
+    <h2 class="bdcc-title-small --bold --right">Servicios y herramientas de apoyo</h2>
+
+    <svg class="title-svg-deco" viewBox="0 0 1440 340" aria-label="Tools">
+        <use xlink:href="./images/svg/ac78-svg.svg#titles__tool"></use>
+    </svg>
+
+    <div class="canvas-holder"></div>
+
+    <div class="content-text">
+        <div class="col-left container-small">
+            <p>Nuestros servicios y herramientas de apoyo están a tu servicio para apoyar tu proyecto.</p>
+            <p>Las hemos dividido en diferentes categorías y areas de acción para que te sea muy fácil aceder a ellas.</p>
+            <a class="link-button --arrow-in --font-xs" href="tools.html" target="_self">
+                CONOCE + SOBRE LOS SEVICIOS DE BDCC
+            </a>
+        </div>
+
+        <div class="col-right">
+            <%= partial "components/titles-oval/title-oval--take-a-look" %>
+        </div>
+    </div>
+
+    <ul class="section-services__ul">
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-entorno.html", alt: "Entorno", active: false } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-marketing.html", alt: "Marketing", active: false  } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-modelo-de-negocio.html", alt: "Modelo de negocio", active: false  } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-evolucion-empresa.html", alt: "Evolución empresa", active: false  } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-administracion-y-finanzas.html", alt: "Admn. & Finanzas", active: false  } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-propiedad-intelectual.html", alt: "Propiedad Intelectual", active: false  } %>
+        </li>
+        <li>
+            <%= partial "components/home/_tools__button-no-internal", locals: { url:"tools-internacionalizacion.html", alt: "Internacionalización", active: false  } %>
+        </li>
+    </ul>
+</section>

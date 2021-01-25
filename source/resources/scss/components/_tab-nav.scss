@@ -1,0 +1,112 @@
+.tab-nav {
+  position: relative;
+  width: 100%;
+
+  &:not(.--no-margin) {
+    margin-top: var(--padding-m);
+  }
+  //overflow: hidden;
+
+  .title-oval {
+    position: absolute;
+    top:0;
+    left:var(--padding-xs);
+    transform: translateY(-120%);
+  }
+}
+
+.tab-nav .ul-holder {
+  --height: auto;
+
+  position: relative;
+  width: 100%;
+  height: var(--height);
+  //overflow: hidden;
+}
+
+.tab-nav ul {
+  position: relative;
+  top:0;
+  left:0;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+
+  color: var(--black);
+
+  li {
+    display: block;
+    pointer-events: all;
+  }
+
+  a {
+    --font-size: #{(24px / 16px) * 1rem};
+    --height: #{(48px / 16px) * 1rem};
+    --bg: var(--white);
+    --color:currentColor;
+    --border-color:currentColor;
+    --colorHover: var(--grey-bdcc);
+    --bgHover: var(--black);
+    font-weight: 200;
+    width: auto;
+    white-space: nowrap;
+    user-select: none;
+    user-drag: none;
+    //pointer-events: none;
+
+  }
+}
+
+.__touch {
+  .tab-nav .ul-holder {
+    --height: #{(60px / 16px) * 1rem};
+  }
+
+  .tab-nav ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+  }
+
+  .tab-nav .controls {
+    display: none;
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .tab-nav ul a {
+    --font-size: #{(20px / 16px) * 1rem};
+    --height: #{(40px / 16px) * 1rem};
+  }
+
+  .tab-nav .ul-holder {
+    height: #{(40px / 16px) * 1rem};
+    overflow: hidden;
+  }
+}
+
+@media (max-width: $smartphone) {
+  .tab-nav {
+    &:not(.--no-margin) {
+      margin-top: var(--padding-xs);
+    }
+  }
+  .tab-nav ul a {
+    --font-size: #{(18px / 16px) * 1rem};
+    --height: #{(36px / 16px) * 1rem};
+  }
+}

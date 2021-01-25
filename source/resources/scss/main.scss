@@ -1,0 +1,144 @@
+//sass --watch app/resources/scss/main.scss:public/resources/css/main.min.css
+//sass --watch app/resources/scss/main.scss:public/resources/css/main.min.css  --style compressed
+
+@import "utils/mixins/breakpoints";
+
+@import "variables/colors";
+@import "variables/paths";
+@import "variables/fonts";
+@import "variables/z-index";
+@import "variables/ease";
+@import "variables/sizes";
+
+@import "utils/normalize";
+@import "utils/normalize_cuchillo";
+@import "utils/utils";
+@import "utils/jstags";
+@import "utils/marquee";
+@import "utils/scroll";
+
+@import "general";
+@import "default";
+
+@import "interface/decos";
+@import "interface/titles";
+@import "interface/paragraphs";
+
+@import "interface/containers";
+
+@import "interface/links/links";
+@import "interface/links/link-button";
+@import "interface/links/link-arrow";
+@import "interface/links/link-basic";
+@import "interface/links/link-back";
+@import "interface/links/link-arrow-aux";
+@import "interface/links/link-intro-li";
+@import "interface/links/selector-link-button";
+@import "interface/links/button-toggle-menu";
+
+
+@import "layout/wrap";
+@import "layout/header";
+@import "layout/sidemenu";
+@import "layout/sidemenu@responsive";
+@import "layout/footer";
+@import "layout/cursor";
+
+@import "windows/cookies";
+@import "windows/message";
+
+//COM
+@import "components/body-default";
+@import "components/header-double-title";
+@import "components/block-video-rounded";
+@import "components/block-image-rounded";
+@import "components/block-grafica-bdcc";
+@import "components/block-ul-rounded";
+@import "components/block-advice";
+@import "components/block-simple-paginator";
+@import "components/plyr";
+
+@import "pages/page-ayudas";
+@import "pages/page-about";
+@import "pages/page-advice";
+@import "pages/page-icss";
+@import "pages/page-icss__grafica-1";
+@import "pages/page-icss__grafica-2";
+@import "pages/page-tools";
+@import "pages/page-tool-detail";
+@import "pages/page-tool-detail@responsive";
+
+//HOME
+@import "components/home/section-intro";
+@import "components/home/section-services";
+@import "components/home/block-magazine";
+@import "components/home/block-magazine__news";
+@import "components/home/block-magazine__articles";
+
+//TOOLS
+@import "components/tools/block-tools";
+@import "components/tools/card-tool";
+@import "components/tools/card-tool-category";
+@import "components/tools/nav-tools";
+
+//NEW
+@import "components/header-news-detail";
+@import "components/body-news-detail";
+
+//MGZ
+@import "components/header-backside-title";
+@import "components/header-magazine-detail";
+@import "components/body-magazine-detail";
+@import "components/nav-next-articles";
+
+//AIDS
+@import "components/aids/section-aids";
+@import "components/aids/section-aids__filters";
+@import "components/aids/section-aids__aids";
+
+
+//
+@import "components/block-search-results";
+@import "components/tab-nav";
+
+@import "forms/default__form";
+@import "forms/default__form__checkbox";
+@import "forms/checkbox-rounded";
+@import "forms/form-advice";
+@import "forms/form-search";
+
+@import "components/footer/prefooter";
+@import "components/footer/section-joinus";
+@import "components/footer/section-orientation";
+@import "components/block-next";
+@import "components/block-news";
+@import "components/block-magazine-articles";
+
+@import "components/title-oval";
+
+//BASIC PAGE
+@import "components/header-basic-page";
+@import "components/body-basic-page";
+
+/*@import "components/marquee-primt";
+@import "components/tshirt-editor";
+@import "components/tshirt-editor__form";
+@import "components/tshirt-editor__form@responsive";
+@import "components/tshirt-editor__form__radio";
+@import "components/tshirt-editor__form__radio@responsive";
+@import "components/tshirt-editor__form__upload";
+@import "components/tshirt-editor__form__upload@responsive";
+@import "components/tshirt-editor__form__check";
+@import "components/tshirt-editor__form__check@responsive";
+@import "components/tshirt-editor__form__submit";
+@import "components/tshirt-editor__form__submit";
+@import "components/strokes-container";
+@import "components/section-faq";
+@import "components/section-info";
+@import "components/block-article";
+@import "components/block-image";
+@import "components/block-image-columns";
+@import "components/section-contact";
+@import "components/header-logo";
+@import "components/ul-faq";
+@import "components/form-contact";*/

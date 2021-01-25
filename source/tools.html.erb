@@ -1,0 +1,129 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-tools __page wrap" data-page="tools" data-bg="--grey-bdcc">
+    <%= partial "components/header_double_title__h1", locals: {
+    title: "Servicios y herramientas de apoyo",
+    summary: "La guía completa para las personas creativas. Información práctica que necesitas saber, o buscar rápidamente con herramientas útiles para comenzar. ¡Elige tu opción!",
+    svg: "titles__tool",
+    height: "340"
+    } %>
+
+    <nav class="nav-tools" id="maincontent">
+        <%= partial "components/titles-oval/title-oval--choose-option" %>
+
+        <div class="controls" aria-controls="BlockTools">
+            <button class="__prev" aria-label="Anterior cantegoria" cursor-follow data-power=".2">←</button>
+            <button class="__next" aria-label="Siguiente categoria" cursor-follow data-power=".2">→</button>
+        </div>
+
+        <div class="ul-holder __holder">
+            <ul class="__ul" aria-label="Todas las herramientas">
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools.html", alt: "Todas", active: true  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-entorno.html", alt: "Entorno", active: false } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-marketing.html", alt: "Marketing", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-modelo-de-negocio.html", alt: "Modelo de negocio", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-evolucion-empresa.html", alt: "Evolución empresa", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-administracion-y-finanzas.html", alt: "Admn. & Finanzas", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-propiedad-intelectual.html", alt: "Propiedad Intelectual", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-internacionalizacion.html", alt: "Internacionalización", active: false  } %>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="block-tools-holder __toolsHolder" id="BlockTools" role="region" aria-live="polite">
+        <div class="block-tools __tools" data-header-mod="--white-all">
+            <svg class="title-svg-deco" viewBox="0 0 1440 340" aria-label="Tools">
+                <use xlink:href="./images/svg/ac78-svg.svg#titles__tool"></use>
+            </svg>
+
+            <ul class="block-tools__ul">
+                <li>
+                    <%= partial "components/_card_tool_prop_intelectual", locals: {
+                        title: "Mapa Interactivo de Propiedad Intelectual",
+                        category: "ADMON & FINANZAS",
+                        aux: "TOOL 01 / 07",
+                        icon: "internacionalizacion",
+                        url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_admon_finanzas", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 02 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_empresa", locals: {
+                    title: "Mapa Interactivo de Propiedad Intelectual",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 03 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_entorno", locals: {
+                    title: "Mapa Interactivo de Propiedad Intelectual",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 04 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_internacionalizacion", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 05 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_marketing", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 06 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_negocio", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 07 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</article>

@@ -1,1 +1,8 @@
-# bdcc-2021
+# BDCC
+
+## Instrucciones
+
+Instalar middleman 
+```
+bundle install
+```

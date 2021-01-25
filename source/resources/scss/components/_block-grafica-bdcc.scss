@@ -1,0 +1,133 @@
+.block-grafica-bdcc {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+
+  --width-star: #{(42vw * .9)};
+  --width-circle: #{(21vw * .9)};
+  --width-bubble: #{(28vw * .9)};
+  --height-bubble: #{(19vw * .9)};
+  --font-size: #{(2.8vw * .9)};
+  --margin-bubbles: #{(-6vw * .9)};
+  --x-left-bubbles: #{(-14.8vw * .9)};
+  --x-right-bubbles: #{(19.8vw * .9)};
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.block-grafica-bdcc__core {
+  position: absolute;
+  top:0;
+  left:0;
+
+  width: var(--width-star);
+  height: var(--width-star);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--grey-bdcc);
+  @include titleFont();
+  font-size: var(--font-size);
+
+  svg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    fill: var(--black);
+  }
+
+  span {
+    position: relative;
+    background: var(--black);
+  }
+}
+
+.block-grafica-bdcc__bubble,
+.block-grafica-bdcc__circle {
+  position: absolute;
+  top:0;
+  left:0;
+
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include titleFont();
+  font-size: var(--font-size);
+  border: 1px solid var(--grey-bdcc);
+}
+
+.block-grafica-bdcc__circle {
+  width: var(--width-circle);
+  height: var(--width-circle);
+}
+
+.block-grafica-bdcc__bubble {
+  width: var(--width-bubble);
+  height: var(--height-bubble);
+}
+
+@media (prefers-reduced-motion) {
+  .block-grafica-bdcc {
+    height: auto;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: var(--padding-m);
+  }
+
+  .block-grafica-bdcc {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li:nth-child(2) {
+        margin: var(--margin-bubbles) 0;
+      }
+
+      &:first-of-type {
+        li:nth-child(2) {
+          transform: translate3d(var(--x-left-bubbles),0,0);
+        }
+      }
+
+      &:last-of-type {
+        li:nth-child(2) {
+          transform: translate3d(var(--x-right-bubbles),0,0);
+        }
+      }
+    }
+  }
+
+  .block-grafica-bdcc__core {
+    position: relative;
+    margin: 0 -4vw;
+  }
+
+  .block-grafica-bdcc__bubble,
+  .block-grafica-bdcc__circle {
+    position: relative;
+  }
+}
+
+@media (max-width: $smartphone) {
+  .block-grafica-bdcc {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+  }
+}

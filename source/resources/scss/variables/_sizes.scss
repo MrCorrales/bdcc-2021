@@ -1,0 +1,33 @@
+:root {
+  --padding-xxs: #{(15px / 16px) * 1rem};
+  --padding-xs: #{(30px / 16px) * 1rem};
+  --padding-s: #{(60px / 16px) * 1rem};
+  --padding-m: #{(90px / 16px) * 1rem};
+  --padding-l: #{(120px / 16px) * 1rem};
+  --padding-xl: #{(150px / 16px) * 1rem};
+  --padding-xxl: #{(180px / 16px) * 1rem};
+
+  --curva: var(--padding-xs);
+
+  --max-width-small: #{(360px / 16px) * 1rem};
+  --max-width-mid: #{(400px / 16px) * 1rem};
+  --max-width-news: #{(1200px / 16px) * 1rem};
+  --max-width-magazine: #{(740px / 16px) * 1rem};
+  --max-width-from: #{(1000px / 16px) * 1rem};
+
+  --header-open-height: var(--padding-m)
+}
+
+.--header-hide {
+  --header-open-height: 0;
+}
+
+@media (max-width: $smartphone) {
+  :root {
+    --curva: var(--padding-xxs);
+  }
+}
+
+@function vh($size) {
+  @return calc(var(--vh, 1vh) * #{$size});
+}

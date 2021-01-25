@@ -1,0 +1,159 @@
+:root {
+  --font-sans: 'Galano Grotesque';
+  --font-serif: 'Sometimes Times';
+
+  --font-size-ratio: #{8/9};
+
+  --font-size-xxlarge: #{(90px / 16px) * 1rem};
+  --font-size-form: #{(32px / 16px) * 1rem};
+
+
+  ///UTILIZADAS
+  --font-size-form-inputs: #{(24px / 16px) * 1em};
+  --font-size-xlarge: #{(72px / 16px) * 1rem};
+  --font-size-large: #{(45px / 16px) * 1rem};
+  --font-size-mid: #{(24px / 16px) * 1rem};
+  --font-size-base: #{(18px / 16px) * 1rem};
+  --font-size-base-mobile: #{(16px / 16px) * 1rem};
+  --font-size-small: #{(12px / 16px) * 1rem};
+  --font-size-xsmall: #{(9px / 16px) * 1rem};
+
+  --font-size-title-tablet: #{(32px / 16px) * 1rem};
+  --font-size-title-smartphone: #{(24px / 16px) * 1rem};
+
+
+  --line-height-sans: #{(18/14)};
+  --line-height-serif: #{(20/16)};
+}
+
+$line-height-base: var(--line-height-sans);
+$line-height-base-serif: var(--line-height-serif);
+
+html{
+  width: 100%;
+  height: 100%;
+  font-size: 16px;//1.1111vw;
+
+  @media (min-width: $largeScreen) {
+    font-size: 1.1111vw;
+  }
+
+  @media (max-width: $smartphone) {
+
+  }
+}
+
+@mixin font-sans($size:null, $line-height:$line-height-base, $font-weight:400) {
+  font-family: var(--font-sans);
+  line-height: $line-height;
+  font-size: $size;
+  font-weight: $font-weight;
+}
+
+@mixin font-serif($size:null, $line-height:$line-height-base-serif, $font-weight:400) {
+  font-family: var(--font-serif);
+  line-height: $line-height;
+  font-size: $size;
+  font-weight: $font-weight;
+}
+
+@mixin small-title($align:right) {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 0 var(--padding-xs);
+  text-align: $align;
+}
+
+/*
+
+@mixin font-sans-p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: $line-height-base;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-p-bold {
+  font-family: var(--font-sans-bold);
+  font-weight: 500;
+  line-height: $line-height-base;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-default {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-light {
+  font-family: var(--font-sans-light);
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-bold {
+  font-family: var(--font-sans-bold);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xlarge);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-faq-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-mid);
+  font-weight: 400;
+  line-height: $line-height-base;
+  letter-spacing: -.05em;
+}
+@mixin font-sans-faq-content {
+  font-family: var(--font-sans);
+  font-size: rem(28px);
+  font-weight: 400;
+  line-height: $line-height-base;
+  letter-spacing: -.05em;
+
+  b,strong {
+    font-family: var(--font-sans-bold);
+    font-weight: 400;
+  }
+}
+
+
+
+@mixin font-sans-info {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-large);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-input {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-mid);
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+@mixin font-sans-legal {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 200;
+  line-height: 1;
+}*/

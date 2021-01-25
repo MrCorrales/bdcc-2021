@@ -1,0 +1,167 @@
+.section-aids__aids {
+  --font-size-title: #{(60px / 16px) * 1rem};
+  --label-width: #{(140px / 16px) * 1rem};
+  --size-cross: #{(20px / 16px) * 1rem};
+}
+
+.section-aids__aids > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-aids__aids > ul {
+  padding-bottom: var(--padding-xs);
+}
+
+.section-aids__aids > ul > li {
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
+
+  &:not(:last-of-type) {
+    margin-bottom: var(--padding-xs);
+  }
+}
+
+.section-aids__aids__item {
+  --height-close: 1.125rem;
+  --height-open: 240px;
+  --duration: .8s;
+
+  overflow: hidden;
+
+  transition-timing-function: var(--ease-in-out-expo);
+  transition: height;
+  transition-duration: var(--duration);
+
+  &[aria-expanded="true"] {
+    height: calc(var(--height-close) + var(--height-open));
+
+    button > svg {
+      transform: rotate(135deg);
+    }
+  }
+
+  &[aria-expanded="false"] {
+    height: var(--height-close);
+  }
+}
+
+.section-aids__aids__item button {
+  position: relative;
+  width: 100%;
+  @include basic-a();
+
+  background: transparent;
+  text-align: left;
+  padding: 0 0 rem(10px);
+
+  .title {
+    @include titleFont();
+    font-size: var(--font-size-title);
+  }
+
+  .status,
+  .date {
+    @include P--default();
+    margin-bottom: 0;
+    padding-right: var(--size-cross);
+  }
+  .status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .status:before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    display: block;
+    margin-top: -.3em;
+    margin-right: .4em;
+  }
+
+  svg {
+    position: absolute;
+    right: 0;
+    bottom: rem(10px);
+    width: var(--size-cross);
+    height: var(--size-cross);
+    stroke: currentColor;
+    stroke-width: 1px;
+
+    transform-origin: center center;
+    transition-timing-function: var(--ease-in-out-expo);
+    transition: transform;
+    transition-duration: var(--duration);
+  }
+}
+
+
+.section-aids__aids__item.--status-open button .status:before {
+  background-color: var(--green-bdcc);
+}
+
+.section-aids__aids__item.--status-close button .status:before {
+  background-color: var(--red-bdcc);
+}
+
+.section-aids__aids__item .content {
+  padding: var(--padding-xs) 0 0;
+}
+
+.section-aids__aids__item .content > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1rem;
+
+  li {
+    display: flex;
+    &:not(:last-of-type) {
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .label {
+    padding-top: .2em;
+    flex: 0 0 var(--label-width);
+    margin-right: var(--padding-xs);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-small);
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: var(--line-height-sans);
+  }
+
+  .value {
+    @include body--default();
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-aids__aids {
+    --font-size-title: var(--font-size-title-tablet);
+  }
+}
+
+
+@media (max-width: $smartphone) {
+  .section-aids__aids {
+    --font-size-title: var(--font-size-title-smartphone);
+  }
+
+  .section-aids__aids ul li {
+    font-size: #{(20px / 16px) * 1rem};
+  }
+
+  .section-aids__aids__item .content > ul {
+    .label {
+      flex: 0 0 100%;
+    }
+
+    li {
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+//CHECK
+.checkbox-rounded {
+  --size: 30px;//#{(30px / 16px) * 1rem};
+  --size-bubble: 20px;//#{(20px / 16px) * 1rem};
+  --top-bubble: 4px;//#{(4px / 16px) * 1rem};
+  --left-bubble: 5px;//#{(5px / 16px) * 1rem};
+  --size-check: 20px; // rem(30px);
+  --top-check: 4px;//#{(4px / 16px) * 1rem};
+  --left-check: 5px;//#{(5px / 16px) * 1rem};
+  --font-size: var(--font-size-small);
+  --font-line: 31px;//#{(31px / 16px) * 1rem};
+
+  position: relative;
+  height: var(--size);
+  border-radius: var(--size);
+  border: 1px solid currentColor;
+  margin: -1px 0 0 -1px;
+
+  &:before {
+    @include pseudo-element-absolute();
+    top: var(--top-bubble);
+    left: var(--left-bubble);
+    width: var(--size-bubble);
+    height: var(--size-bubble);
+    border: 1px solid currentColor;
+    border-radius: 50%;
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--size);
+
+    font-family: var(--font-sans);
+    font-size: var(--font-size);
+    line-height: var(--font-line);
+    font-weight: 400;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    padding: 0 .9em 0 var(--size);
+
+    &:after {
+      @include pseudo-element-absolute();
+      top:var(--top-check);
+      left:var(--left-check);
+      margin: 0;
+      width: var(--size-check);
+      height: var(--size-check);
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0;
+      transform: scale3d(0,0,1);
+
+      transition:
+              opacity .2s var(--ease-out-quad) .1s,
+              transform .4s var(--ease-in-quad);
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+        transform: scale3d(.5,.5,1);
+        transition:
+                opacity .2s var(--ease-out-quad),
+                transform .6s var(--ease-out-expo);
+      }
+    }
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+      transform: scale3d(1,1,1);
+
+      transition:
+              opacity .2s var(--ease-out-quad),
+              transform .6s var(--ease-out-expo);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.button-toggle-menu {
+  @include basic-a();
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+
+  width: var(--padding-xs);
+  height: var(--padding-xs);
+
+  transform-origin: center center;
+  stroke: var(--green-bdcc);
+  stroke-width: 1px;
+
+  transition: transform .6s var(--ease-out-quad), stroke .3s var(--ease-out-quad) .2s;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.__active,
+  &.__linkActive {
+    pointer-events: none;
+  }
+
+  &.__close {
+    transform: rotate(135deg);
+    stroke: var(--black);
+
+    transition: transform .6s var(--ease-in-out-quad), stroke .3s var(--ease-out-quad);
+  }
+}

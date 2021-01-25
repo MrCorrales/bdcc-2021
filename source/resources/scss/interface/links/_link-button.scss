@@ -1,0 +1,216 @@
+%link-button {
+  --border: 1px;
+  --height: 1.875rem; // rem(30px);
+  --right-arrow:.2em;
+  --color:currentColor;
+  --border-color:currentColor;
+  /*
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:var(--black);
+  --colorHover: var(--white);
+  --bgHover: var(--black);
+  */
+
+  @include basic-a();
+  position: relative;
+
+  border: var(--border) solid var(--border-color);
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  line-height: var(--height);
+  font-weight: 400;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+
+  color: var(--color);
+  background: var(--bg);
+  border-radius: calc(2em);
+
+  height: var(--height);
+  display: flex;
+  align-items: center;
+
+  /////MODIFICADORES
+  &.--small {
+    --height: 1.875rem;
+  }
+
+  &:not(--font-xs) {
+    --font-size: var(--font-size-small);
+    padding: .1em .9em 0 .9em;
+  }
+
+  &.--font-mid {
+    --font-size: var(--font-size-mid);
+    --height: #{(60px / 16px) * 1rem};
+    --right-arrow:0;
+  }
+
+  &.--font-xs {
+    --font-size: var(--font-size-xsmall);
+    padding: .1em 1.27em 0 1.27em;
+  }
+
+  &.--text-center {
+    justify-content: center;
+  }
+
+  &:not(.--small) {
+
+  }
+
+  &.--arrow-up,
+  &.--arrow-down,
+  &.--arrow-left,
+  &.--arrow-in,
+  &.--arrow-right,
+  &.--arrow-out,
+  &[target="_blank"] {
+    --hide: calc(var(--height) * -.7);
+    --show: calc(var(--height) * .7);
+
+    overflow: hidden;
+
+    &:after,
+    &:before {
+      @include pseudo-element-absolute();
+      display: block;
+      top: 0;
+      right: var(--right-arrow);
+      padding: 0 .9em 0 0;
+    }
+
+    &:before {
+      transform: translate3d(var(--x-hide), var(--y-hide), 1px);
+    }
+  }
+
+  &.--arrow-up {
+    --x-show:0;
+    --x-hide:0;
+    --y-show: var(--hide);
+    --y-hide: var(--show);
+
+    &:before,
+    &:after {
+      content: '↑';
+    }
+  }
+
+  &.--arrow-down {
+    --x-show:0;
+    --x-hide:0;
+    --y-show: var(--show);
+    --y-hide: var(--hide);
+
+    &:before,
+    &:after {
+      content: '↓';
+    }
+  }
+
+  &.--arrow-left {
+    --x-show:var(--hide);
+    --x-hide:var(--show);
+    --y-show:0;
+    --y-hide:0;
+
+    &:before,
+    &:after {
+      content: '←';
+    }
+
+    &:before {
+      opacity: 0;
+    }
+  }
+
+  &.--arrow-right {
+    --x-show:var(--show);
+    --x-hide:var(--hide);
+    --y-show:0;
+    --y-hide:0;
+
+    &:before,
+    &:after {
+      content: '→';
+    }
+
+    &:before {
+      opacity: 0;
+    }
+  }
+
+  &.--arrow-in {
+    --x-show:var(--show);
+    --x-hide:var(--hide);
+    --y-show:var(--show);
+    --y-hide:var(--hide);
+
+    &:before,
+    &:after {
+      content: '↘';
+    }
+  }
+
+  &.--arrow-out,
+  &[target="_blank"] {
+    --x-show:var(--show);
+    --x-hide:var(--hide);
+    --y-show:var(--hide);
+    --y-hide:var(--show);
+
+    &:before,
+    &:after {
+      content: '↗';
+    }
+  }
+
+  /////HOVER
+  //transition: color .1s var(--ease-out-quad), background .0s var(--ease-out-quad);
+  &:hover {
+    color: var(--colorHover);
+    background: var(--bgHover);
+    border-color: var(--bgHover);
+    //transition: color .0s var(--ease-out-quad), background .2s var(--ease-out-quad);
+
+    &.--arrow-up,
+    &.--arrow-down,
+    &.--arrow-left,
+    &.--arrow-in,
+    &.--arrow-right,
+    &.--arrow-out,
+    &[target="_blank"] {
+      &:before {
+        opacity: 1;
+        transform: translate3d(0, 0, 1px);
+        transition: transform .4s var(--ease-out-circ), opacity .1s var(--ease-in-quad);
+      }
+
+      &:after {
+        transform: translate3d(var(--x-show), var(--y-show), 1px);
+        transition: transform .2s var(--ease-in-quad);
+      }
+    }
+  }
+
+  &.__active {
+    color: var(--colorHover);
+    background: var(--bgHover);
+    border-color: var(--bgHover);
+    pointer-events: none;
+  }
+}
+
+@mixin link-button($color:$black, $barColor:$white) {
+  @extend %link-button;
+  color: $color;
+  svg {
+    stroke: $barColor;
+  }
+}
+
+.link-button {
+  @extend %link-button;
+}

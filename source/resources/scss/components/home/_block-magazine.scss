@@ -1,0 +1,41 @@
+.block-magazine {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--padding-xs) var(--padding-m) 0;
+  color: var(--black);
+
+  @include title-svg-deco__faker(.3);
+
+  > section,
+  > div {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .block-magazine {
+    padding: var(--padding-xs) var(--padding-s) 0;
+
+    > section,
+    > div {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  }
+
+  .block-magazine__articles {
+    order:2;
+  }
+
+  .block-magazine__news {
+    order:1;
+  }
+}
+
+@media (max-width: $smartphone) {
+  .block-magazine {
+    padding: var(--padding-xs) var(--padding-xs) 0;
+  }
+}

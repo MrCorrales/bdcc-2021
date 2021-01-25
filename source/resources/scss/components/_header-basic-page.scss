@@ -1,0 +1,25 @@
+.header-basic-page {
+  --font-size-title: var(--font-size-xlarge);
+
+  padding: var(--padding-l) var(--padding-m) 0;
+  margin: 0 auto;
+  max-width: var(--max-width-news);
+}
+
+.header-basic-page > .link-back {
+  margin-bottom: 2em;
+}
+
+.header-basic-page > .title {
+  margin-top: 0;
+  @include titleFont();
+  font-size: var(--font-size-title);
+}
+
+@media (max-width: $smartphone) {
+  .header-basic-page {
+    --font-size-title: var(--font-size-title-tablet);
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+  }
+}

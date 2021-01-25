@@ -1,0 +1,72 @@
+.__noScroll {
+  overflow: hidden;
+  //pointer-events: none;
+}
+
+.__loading {
+  position: relative;
+  &:after {
+    @include z-index(99999);
+    position: absolute;
+    content:' ';
+    display: block;
+    top:0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.__cursorFollow {
+  transform-origin: 50% 50%;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: none;
+}
+
+.__holderSplit {
+  position: relative;
+
+  .__line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .__char {
+    position: relative;
+    display: block;
+  }
+
+  .splitLine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+
+    > span {
+      display: block;
+    }
+  }
+}
+
+.__page {
+  opacity: 0;
+}
+
+.__scrollerItem, .scrollerItem {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.__scrollNative {
+  .__scrollerItem, .scrollerItem {
+    position: relative;
+  }
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.__movable {
+  cursor: move;
+  user-select: none;
+}

@@ -1,0 +1,39 @@
+@font-face {
+    font-family:"Galano Grotesque";
+    src: url("ac78-GalanoGrotesqueAlt.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:"Galano Grotesque";
+    src: url("ac78-GalanoGrotesqueAltLight.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:"Galano Grotesque";
+    src: url("ac78-GalanoGrotesqueAltMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:"Sometimes Times";
+    src: url("ac78-SometimesTimes.woff2") format("woff2");,
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face{
+    font-family:"Sometimes Times";
+    src: url("ac78-SometimesTimesItalic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}

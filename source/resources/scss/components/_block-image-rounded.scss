@@ -1,0 +1,27 @@
+.block-image-rounded {
+  --max-width-caption: #{(520px / 16px) * 1rem};
+
+  position: relative;
+  margin: 0 auto;
+
+  figure {
+    //-webkit-mask-image: -webkit-radial-gradient(white, black);
+
+    img {
+      background: var(--black);
+      border-radius: var(--curva);
+      border: 1px solid var(--black);
+    }
+  }
+
+  figcaption {
+    max-width: var(--max-width-caption);
+    margin: 1em 0 0;
+    padding: 0 1em;
+
+    font-family: var(--font-sans);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-sans);
+    font-weight: 400;
+  }
+}

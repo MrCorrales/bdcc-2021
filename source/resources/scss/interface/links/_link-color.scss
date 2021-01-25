@@ -1,0 +1,31 @@
+@mixin link-color($color:$black, $hover:$assertive, $decoration:none) {
+  @include basic-a();
+  text-decoration: $decoration;
+  color: $color;
+
+  transition: color .4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  &:hover {
+    color: $hover;
+
+    transition: color .0s;
+  }
+
+  &.link-active {
+    pointer-events: none;
+    color: $hover;
+  }
+
+  &.link-active-enabled {
+    color: $hover;
+  }
+
+  &.link-disabled{
+    pointer-events: none;
+  }
+}
+
+
+
+
+

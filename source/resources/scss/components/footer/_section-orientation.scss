@@ -1,0 +1,74 @@
+.section-orientation {
+  position: relative;
+  background: var(--black);
+  padding: var(--padding-xs);
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > .holder {}
+}
+
+.section-orientation .category {
+  position: absolute;
+  top:var(--padding-xs);
+  left:var(--padding-xs);
+  min-width: auto;
+}
+
+.section-orientation .title-oval {
+  margin: 0 0 0 auto;
+}
+
+.section-orientation .title {
+  --font-size:3vw;
+  width: 50%;
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: calc(var(--font-size) * .9);
+  text-transform: uppercase;
+  margin: -1em 0 var(--padding-xs);
+}
+
+.section-orientation p {
+  @include P--default();
+  margin-left: var(--padding-m);
+  margin-right: var(--padding-m);
+}
+
+.section-orientation .link-button {
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:currentColor;
+  --colorHover: var(--black);
+  --bgHover: var(--white);
+  max-width: rem(360px);
+  margin: var(--padding-s) var(--padding-m) var(--padding-xs);
+}
+
+
+@media (max-width: $tabletPortrait) {
+  .section-orientation .title-oval {
+    margin-bottom: var(--padding-s);
+  }
+
+  .section-orientation p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-orientation .link-button {
+    margin: var(--padding-xs) auto var(--padding-xs);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .section-orientation .title {
+    --font-size: #{(30px / 16px) * 1rem};
+    margin-top:0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.page-advice {
+  --font-size-h2: #{(180px / 16px) * 1rem};
+  --font-size-blockquote: var(--font-size-large);
+  --max-width-blockquote: #{(630px / 16px) * 1rem};
+
+  .header-double-title {
+    margin-bottom: 0;
+  }
+}
+.page-advice__body {}
+
+.page-advice__blockuote {
+  @include titleFont();
+  font-size: var(--font-size-blockquote);
+  margin: var(--padding-s) auto;
+  max-width: var(--max-width-blockquote);
+  text-transform: uppercase;
+}
+
+@media (max-width: $smartphone) {
+  .page-advice {
+    --font-size-blockquote: #{(28px / 16px) * 1rem};
+  }
+  .page-advice__blockuote {
+    margin: var(--padding-xs) auto;
+  }
+}
+

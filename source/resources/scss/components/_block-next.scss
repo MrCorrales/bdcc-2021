@@ -1,0 +1,47 @@
+.block-next {
+  padding: var(--padding-xs);
+  color: var(--black);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+}
+
+.block-next .title {
+  flex: 0 0 auto;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-mid);
+  line-height: 1;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-right: var(--padding-xs);
+
+  &:after {
+    content: '→';
+  }
+}
+
+.block-next .link-button {
+  flex: 1 0 auto;
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:currentColor;
+  --colorHover: var(--white);
+  --bgHover: var(--black);
+  --font-size: #{(34px / 16px) * 1rem};
+  --height: #{(68px / 16px) * 1rem};
+}
+
+@media (max-width: $tabletPortrait) {
+  .block-next .title {
+    font-size: var(--font-size-base);
+  }
+  .block-next .link-button {
+    --font-size: var(--font-size-base);
+    --height: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    width: 100%;
+  }
+}

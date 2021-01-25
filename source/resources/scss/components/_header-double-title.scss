@@ -1,0 +1,125 @@
+.header-double-title {
+  position: relative;
+  padding-top: var(--padding-m);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: var(--padding-s);
+}
+
+.header-double-title svg {
+  width: 100%;
+  fill: currentColor;
+  grid-area: deco;
+  margin-bottom: var(--padding-xs);
+  order: 1;
+}
+
+.header-double-title .bdcc-title-small {
+  padding: 0 var(--padding-m) 0 .5em;
+
+  display: inline-block;
+  flex: 0 0 33.333%;
+  white-space: nowrap;
+  order: 3;
+}
+
+.header-double-title .summary {
+  flex: 0 0 33.333%;
+  order: 2;
+
+  p {
+    @include P--default--light();
+    max-width: var(--max-width-small);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+
+    &:empty {
+      display: none;
+    }
+
+    a {
+      @include default-a;
+    }
+  }
+}
+
+.header-double-title__block-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: var(--padding-xs);
+
+  width: calc(50% - var(--max-width-small) * .5);
+
+  a {
+    max-width: rem(270px);
+    margin: 0 auto;
+  }
+
+  .title-oval {
+    margin: 0 auto rem(50px);
+  }
+
+  svg {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .header-double-title {
+    justify-content: space-between;
+  }
+  .header-double-title .bdcc-title-small {
+    padding-right: 0;
+    margin-right: var(--padding-xs);
+  }
+  .header-double-title .summary {
+    margin-left: var(--padding-xs);
+  }
+
+  .header-double-title__block-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: var(--padding-xs);
+
+    width: rem(320px);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .header-double-title .bdcc-title-small {
+    order: 1;
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 0 var(--padding-xs) 0;
+    margin: 0 0 0 0;
+    text-align: left;
+  }
+
+  .header-double-title .summary {
+    flex: 0 0 100%;
+    order: 2;
+    width: 100%;
+    margin: var(--padding-xs) 0 0;
+    padding: 0 var(--padding-xs) 0;
+
+    p {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .header-double-title__block-link {
+    position: relative;
+    order:3;
+    right: auto;
+    bottom: auto;
+    padding: var(--padding-xs);
+
+    width: 100%;
+  }
+}

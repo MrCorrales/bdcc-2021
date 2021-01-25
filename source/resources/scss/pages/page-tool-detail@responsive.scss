@@ -1,0 +1,59 @@
+@media (max-width: $tabletPortrait) {
+  .section-tool-detail .content > .title {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .section-tool-detail .content > hr,
+  .section-tool-detail .content > p,
+  .section-tool-detail .content > .default__form {
+    grid-column-end: 4;
+  }
+
+  .section-tool-detail__banner-holder {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: auto;
+    grid-row-end: auto;
+    padding: var(--padding-s) 0 0;
+
+    > div {}
+  }
+}
+
+@media (max-width: $smartphone) {
+  .section-tool-detail .content {
+    display: block;
+  }
+
+  .section-tool-detail .content > .subtitle {
+    margin-top: 1em;
+  }
+
+  .section-tool-detail .content > .title {
+    font-size: #{(30px / 16px) * 1rem};
+    margin-top: var(--padding-xs);
+  }
+
+  .section-tool-detail__submit-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .submit-holder {
+      width: 100%;
+      order: 1;
+      margin-left: 0;
+      margin-bottom: 1em;
+    }
+
+    .default__form__checkbox {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+  .section-tool-detail__banner > .title {
+    --font-size-title: #{(24px / 16px) * 1rem};
+  }
+}

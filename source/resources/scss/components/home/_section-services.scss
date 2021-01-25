@@ -1,0 +1,152 @@
+.section-services {
+  position: relative;
+  background: var(--grey-bdcc);
+  color: var(--black);
+  //min-height: 100vh;
+  padding: var(--padding-xs);
+
+  @include title-svg-deco__faker();
+}
+
+//TITLE DECO
+.section-services .canvas-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.section-services .content-text {
+  position: relative;
+  padding: var(--padding-s);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-services .col-left {}
+.section-services .col-right {
+  flex: 1 0 auto;
+}
+
+//TITLE OVAL
+.section-services .title-oval {
+  margin: 0 auto;
+}
+
+.section-services .col-left p {
+  @include P--default();
+}
+
+.section-services .col-left .link-button {
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:currentColor;
+  --colorHover: var(--grey-bdcc);
+  --bgHover: var(--black);
+  margin: var(--padding-xs) 0 var(--padding-xs);
+}
+
+
+
+//LISTADO
+.section-services__ul {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+  //opacity: 0;
+  list-style: none;
+  padding: 0;
+
+  overflow: hidden;
+
+  li {
+    display: block;
+  }
+
+  a {
+    position: absolute;
+    top:0;
+    left:0;
+    pointer-events: all;
+    --font-size: 3vw;
+    --height: 6vw;
+    --bg: var(--white);
+    --color:currentColor;
+    --border-color:currentColor;
+    --colorHover: var(--grey-bdcc);
+    --bgHover: var(--black);
+    width: auto;
+    display: inline-flex;
+  }
+}
+
+//REDUCED MOTION
+@media (prefers-reduced-motion) {
+  .section-services {
+    padding-bottom: var(--padding-m);
+  }
+  .section-services:after{
+    display: none;
+  }
+
+  .section-services__ul {
+    position: relative;
+    height: auto;
+    text-align: center;
+    overflow: visible;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      position: relative;
+      top:auto;
+      left:auto;
+      width: auto;
+      display: inline-flex;
+      margin: .1em;
+    }
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-services .content-text {
+    padding: var(--padding-xs) 0;
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-services {
+    @include title-svg-deco__faker(3);
+  }
+  .section-services .content-text {
+    padding: 0;
+  }
+
+  .section-services .col-left {}
+  .section-services .col-right {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  //LISTADO
+  .section-services__ul {
+    a {
+      --font-size: 6vw;
+      --height: 12vw;
+    }
+  }
+}

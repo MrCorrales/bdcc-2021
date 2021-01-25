@@ -1,0 +1,142 @@
+.default__form {
+  --color: currentColor;
+  --color-error: var(--red-bdcc);
+  --font-size: var(--font-size-form-inputs);
+  --font-size-label: var(--font-size-xsmall);
+  --color-submit-hover: var(--red-bdcc);
+  --bg-submit-hover: var(--black);
+  --width-submit: 100%;
+
+  color: var(--color);
+}
+
+//SUBMIT
+.default__form [type="submit"] {
+  --bg: transparent;
+  --color:currentColor;
+  --border-color:currentColor;
+  --colorHover: var(--color-submit-hover);
+  --bgHover: var(--bg-submit-hover);
+  width: 100%;
+  max-width: var(--width-submit);
+  margin: var(--padding-xs) 0 1em;
+}
+
+
+//TEXTFIELD
+.default__form__textarea,
+.default__form__textfield {
+  position: relative;
+
+  &:not(.default__form__textarea) {
+    border-bottom: 1px solid var(--color);
+  }
+
+  margin: calc(var(--padding-xs) * .5) 0;
+
+  &.error,
+  &.success,
+  &.__error,
+  &.__success {
+    &:before {
+      @include pseudo-element-absolute();
+
+      bottom: .1em;
+      right: 0;
+      width: var(--font-size);
+      height: var(--font-size);
+
+      font-family: var(--font-sans);
+      font-weight: 500;
+      text-align: center;
+      line-height: var(--font-size);
+
+      border-radius: 50%;
+    }
+  }
+
+  &.error,
+  &.__error {
+    &:before {
+      color: currentColor;
+      background: url($svg-path + "form/ac78-nok.svg") 100% 100% no-repeat;
+      border: 1px solid var(--black);
+      background-color: var(--color-error);
+    }
+  }
+
+  &.success,
+  &.__success {
+    &:before {
+      color: currentColor;
+      background: url($svg-path + "form/ac78-ok.svg") 100% 100% no-repeat;
+      border: 1px solid var(--black);
+      background-color: var(--success);
+    }
+  }
+}
+
+.default__form__label,
+.default__form__textarea label,
+.default__form__textfield label {
+  --color: var(--white);
+  --color-error: var(--white);
+
+  display: block;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-sans);
+  font-weight: 400;
+
+  text-transform: uppercase;
+
+  margin-left: .1em;
+}
+
+.default__form__textfield input {
+  width: 100%;
+
+  border: 0;
+  background: transparent;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  line-height: 1;
+  font-weight: 200;
+  height: 1.1em;
+  padding: .2em 0 0;
+
+  &::placeholder {
+    color: currentColor;
+    text-transform: uppercase;
+    opacity: .2;
+  }
+
+  @include accessible() {
+    &:focus {
+      background: var(--white);
+      color: var(--black);
+    }
+  }
+}
+
+.default__form__textarea textarea {
+  border: 1px solid currentColor;
+  margin-top: .2em;
+  padding: var(--padding-xxs);
+  border-radius: var(--padding-xxs);
+  width: 100%;
+  background: transparent;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  line-height: 1.2;
+  font-weight: 200;
+
+  &::placeholder {
+    color: currentColor;
+    text-transform: uppercase;
+    opacity: .2;
+  }
+}

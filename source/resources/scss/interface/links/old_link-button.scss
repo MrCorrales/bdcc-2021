@@ -1,0 +1,141 @@
+%link-button {
+  --bg: transparent;
+  --border: 1px;
+  --color:var(--black);
+  --border-color:var(--black);
+  --colorHover: var(--white);
+  --bgHover: var(--black);
+
+  @include basic-a();
+  position: relative;
+  display: inline-block;
+
+  border: var(--border) solid var(--border-color);
+  font-family: var(--font-sans);
+  line-height: 1;
+  font-weight: 400;
+
+  border-radius: calc(2em);
+  overflow: hidden;
+
+  .text {
+    display: block;
+    padding: .735em .9em .6em;
+
+    &:before {
+      @include pseudo-element-absolute();
+      background-color: var(--black);
+      top:0;
+      left:0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  &:after {
+    @include pseudo-element-absolute();
+    content: attr(data-text);
+    color: var(--colorHover);
+    top:0;
+    left:0;
+    width: 100%;
+    padding: .735em .9em .6em;
+    transform: translateY(100%);
+  }
+
+  /////HOVER
+
+  &:hover {
+    .text {
+      //color: var(--white);
+      /*transform: translateY(-100%);*/
+      &:before {
+        transform: translateY(0);
+        transition: transform .4s var(--ease-in-out-circ);
+      }
+    }
+    &:after,
+    &:before {
+      transform: translateY(0);
+      transition: transform .6s var(--ease-in-out-circ);
+    }
+  }
+
+
+
+  /////MODIFICADORES
+  &.--text-center {
+    text-align: center;
+  }
+
+  &.--arrow-up,
+  &.--arrow-down,
+  &.--arrow-left,
+  &.--arrow-in,
+  &.--arrow-right,
+  &.--arrow-out,
+  &[target="_blank"] {
+    &:before {
+      @include pseudo-element-absolute();
+      display: block;
+      top: 0;
+      right: 0;
+      padding: .735em .9em 0 0;
+    }
+  }
+
+  &.--arrow-up:before {
+    content: '↑';
+  }
+
+  &.--arrow-down:before {
+    content: '↓';
+  }
+
+  &.--arrow-left:before {
+    content: '';
+  }
+
+  &.--arrow-right:before {
+    content: '→';
+  }
+
+  &.--arrow-in:before {
+    content: '↘';
+  }
+
+  &.--arrow-out:before,
+  &[target="_blank"]:before {
+    content: '↗';
+  }
+}
+
+/*←
+2190
+
+2191
+
+2192
+
+2193
+
+2196
+
+2197
+
+2198
+↙*/
+
+
+@mixin link-button($color:$black, $barColor:$white) {
+  @extend %link-button;
+  color: $color;
+  svg {
+    stroke: $barColor;
+  }
+}
+
+.link-button {
+  @extend %link-button;
+}

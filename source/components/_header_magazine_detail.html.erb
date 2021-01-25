@@ -1,0 +1,26 @@
+<header class="header-magazine-detail" data-header-mod="--default">
+    <div class="block-image-rounded">
+        <%= partial "components/basics/image", locals: {
+        preload: false,
+        image: "/images/images/test.jpg",
+        width: 1500,
+        height: 1500,
+        alt: "EO",
+        ratio: 1,
+        heightMultiplicator: 1,
+        figureClass: 'media-holder',
+        imageTags: '',
+        } %>
+    </div>
+
+    <div class="header-magazine-detail__content">
+        <div class="holder">
+            <div class="date"><%= date %></div>
+            <h1 class="title"><%= title %></h1>
+        </div>
+    </div>
+
+    <p class="summary">
+        <%= summary %>
+    </p>
+</header>

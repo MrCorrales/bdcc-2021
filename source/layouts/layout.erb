@@ -1,0 +1,139 @@
+<!doctype html>
+<% isDebug = true %>
+<% fileMainJS = "ac78-app.js" %>
+<% filePreloadJS = "ac78-preload.js" %>
+<% fileMainCSS = "ac78-main.css" %>
+<% if isDebug == true %>
+<% @cdn_url = "." %>
+<% else %>
+<% @cdn_url = "." %>
+<% end -%>
+<!-- HTML -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title><%= current_page.data.title %></title>
+    <meta name="description" content="<%= current_page.data.description %>">
+    <!-- SOCIAL TAGS: OG -->
+    <meta property="og:description" content="<%= current_page.data.description %>">
+    <meta property="og:image" content="<%= current_page.data.url_root %>/images/social/facebook-1200x630.jpg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="<%= current_page.data.title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= current_page.data.url %>">
+    <!-- SOCIAL TAGS: TW -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="<%= current_page.data.description %>">
+    <meta name="twitter:image" content="<%= current_page.data.url_root %>/images/social/twitter-600x330.jpg">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:title" content="<%= current_page.data.title %>">
+    <meta name="twitter:url" content="<%= current_page.data.url %>">
+    <!-- OCIONES MOBILE -->
+    <meta name="viewport"                               content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable"           content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style"  content="black-translucent"/>
+    <meta name="format-detection"                       content="telephone=no"/>
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= @cdn_url %>/images/icons/ac78-apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= @cdn_url %>/images/icons/ac78-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= @cdn_url %>/images/icons/ac78-favicon-16x16.png">
+    <link rel="manifest" href="<%= @cdn_url %>/images/icons/ac78-site.webmanifest">
+    <link rel="mask-icon" href="<%= @cdn_url %>/images/icons/ac78-safari-pinned-tab.svg" color="#78ff91">
+    <link rel="shortcut icon" href="<%= @cdn_url %>/images/icons/ac78-favicon.ico">
+    <meta name="msapplication-TileColor" content="#78ff91">
+    <meta name="msapplication-config" content="<%= @cdn_url %>/images/icons/ac78-browserconfig.xml">
+    <meta name="theme-color" content="#ff275b">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67610847-28"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-67610847-28');
+    </script>
+    <!-- SCRIPTS -->
+    <% if isDebug == true %>
+    <!-- DEV -->
+    <link id="__appCSS" rel="preload" href="<%= @cdn_url %>/resources/css/main.css" as="style"/>
+    <link id="__appJS" rel="preload" href="<%= @cdn_url %>/resources/js/main.js" as="script"/>
+    <% else %>
+    <!-- DIST -->
+    <link id="__appCSS" rel="preload" href="<%= @cdn_url %>/styles/<%= fileMainCSS %>" as="style"/>
+    <link id="__appJS" rel="preload" href="<%= @cdn_url %>/scripts/<%= fileMainJS %>" as="script"/>
+    <% end -%>
+    <!-- FONTS -->
+    <link rel="preload" href="<%= @cdn_url %>/fonts/ac78-GalanoGrotesqueAlt.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<%= @cdn_url %>/fonts/ac78-GalanoGrotesqueAltLight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<%= @cdn_url %>/fonts/ac78-GalanoGrotesqueAltMedium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<%= @cdn_url %>/fonts/ac78-SometimesTimes.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<%= @cdn_url %>/fonts/ac78-SometimesTimesItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://player.vimeo.com/external/366246167.hd.mp4?s=ed351c0a6e2caf1f27ee394dd3f6b25f3982a841&profile_id=175" as="video" type="video/mp4" crossorigin>
+    <link id="__appFONTS" rel="stylesheet" type="text/css" href="<%= @cdn_url %>/fonts/ac78-fonts.css">
+    <style>
+      body {opacity:0;}
+    </style>
+  </head>
+  <!-- BODY -->
+  <body data-cdn="<%= @cdn_url %>" class="<%= isDebug ? '__isDebug' : '' %>">
+  <!-- HEADER -->
+  <%= partial "layouts/header" %>
+  <main id="Main" aria-live="polite">
+    <!-- --CONTENIDO-- -->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- --CONTENIDO-- -->
+    <%= yield %>
+    <!-- END CONTENIDO -->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- ------------ --->
+    <!-- END CONTENIDO -->
+  </main>
+  <!-- FOOTER -->
+  <%= partial "layouts/footer" %>
+  <!-- WINDOWS -->
+  <div class="windows">
+    <%= partial "windows/cookies" %>
+    <%= partial "windows/message" %>
+  </div>
+  <!-- SIDEMENU -->
+  <%= partial "layouts/sidemenu" %>
+  <!-- INTERFACE -->
+  <%= partial "layouts/interface" %>
+  <!-- JS -->
+  <% if isDebug == true %>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/libs-preload.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/libs.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/preload.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Components/ScrollItem__Intro.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Components/ScrollItem__Services.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Components/ScrollItem__GraficaBDCC.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Components/ScrollItem__GraficaICSS.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Layout/Wrap.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Layout/Header.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Layout/Cookies.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Layout/Loading.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Layout/Sidemenu.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Windows/Message.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/Default.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/Tools.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/ToolDetail.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/ICSS.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/Ayudas.js"></script>
+  <script src="<%= @cdn_url %>/resources/js/Pages/Search.js"></script>
+  <% else %>
+  <script src="<%= @cdn_url %>/scripts/<%= filePreloadJS %>"></script>
+  <% end -%>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<% figureClass = figureClass ? figureClass : "basic-media-holder" %>
+<% figureTags = figureTags ? figureTags : "" %>
+<% imageTags = imageTags ? imageTags : "" %>
+<% caption = caption ? caption : "" %>
+<% captionTags = captionTags ? captionTags : "" %>
+<% ratio = ratio ? ratio : "1" %>
+<% preload = preload ? preload : false %>
+<% loadType = preload ? "data-item-preload" : "data-item-load" %>
+
+<% heightMultiplicator = heightMultiplicator ? heightMultiplicator : 1 %>
+<% heightIMG = height.to_f * heightMultiplicator %>
+<% aspectRatio = (heightIMG.to_f / width) * 100 %>
+
+<% heightMultiplicatorMobile = heightMultiplicatorMobile ? heightMultiplicatorMobile : 1 %>
+<% heightIMGMobile = height.to_f * heightMultiplicatorMobile %>
+<% aspectRatioMobile = (heightIMGMobile.to_f / width) * 100 %>
+
+<figure class="<%= figureClass %>" style="--aspect-ratio:<%= aspectRatio %>%;--aspect-ratio-mobile:<%= aspectRatioMobile %>%;" <%= figureTags %>>
+
+<img <%= imageTags %>
+<%= loadType %>
+width="<%= width %>"
+height="<%= height %>"
+data-src="<%= image %>"
+data-maxratio="<%= ratio %>"
+src="<%= @cdn_url %>/images/images/blank.png"/>
+
+</figure>

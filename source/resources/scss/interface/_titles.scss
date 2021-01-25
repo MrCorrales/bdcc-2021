@@ -1,0 +1,83 @@
+.bdcc-title-small {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fonst-size);
+  line-height: var(--line-height-sans);
+  text-transform: uppercase;
+
+  &:not(.--width-fixed) {
+    min-width: 100%;
+  }
+
+  //SIZE
+  &:not(.--small) {
+    --fonst-size: var(--font-size-base);
+  }
+  &.--small {
+    --fonst-size: var(--font-size-base);
+  }
+  //WEIGHT
+  &:not(.--bold) {
+    font-weight: 400;
+  }
+  &.--bold {
+    font-weight: 500;
+  }
+  //ALIGN
+  &.--right {
+    text-align: right;
+  }
+  //MARGIN
+  &:not(.--margin-xs) {
+    margin: 0 0 var(--padding-s);
+  }
+  &.--margin-xs {
+    margin: 0 0 var(--padding-xs);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .bdcc-title-small,
+  .bdcc-title-small.--small,
+  .bdcc-title-small:not(.--small) {
+    font-size: rem(12px);
+  }
+}
+
+.title-svg-deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  fill: currentColor;
+}
+
+@mixin title-svg-deco__faker($size:.8) {
+  &:after{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ((340 * $size) / 1440) * 100%;
+    pointer-events: none;
+  }
+}
+
+@mixin titleFont() {
+  font-family: var(--font-sans);
+  letter-spacing: -.025em;
+  font-weight: 200;
+  line-height: .9;
+}
+
+.title-big-edge {
+  font-family: var(--font-sans);
+  font-size: 12vw;
+  letter-spacing: -.040em;
+  font-weight: 200;
+  line-height: #{(130/180)};
+  margin: var(--padding-s) 0 var(--padding-xs) -.07em;
+
+  > span {
+    display: block;
+  }
+}

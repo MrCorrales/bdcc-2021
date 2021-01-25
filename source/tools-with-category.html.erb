@@ -1,0 +1,168 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-tools __page wrap" data-page="tools" data-bg="--grey-bdcc">
+    <%= partial "components/header_double_title", locals: {
+    title: "SERVICIOS Y HERRAMIENTAS DE APOYO",
+    summary: "La guía completa para las personas creativas. Información práctica que necesitas saber, o buscar rápidamente con herramientas útiles para comenzar. ¡Elige tu opción!",
+    svg: "titles__tool",
+    height: "340"
+    } %>
+
+    <nav class="nav-tools">
+        <%= partial "components/titles-oval/title-oval--choose-option" %>
+
+        <div class="controls" aria-controls="BlockTools">
+            <button class="__prev" aria-label="Anterior cantegoria" cursor-follow data-power=".2">←</button>
+            <button class="__next" aria-label="Siguiente categoria" cursor-follow data-power=".2">→</button>
+        </div>
+
+        <div class="ul-holder __holder">
+            <ul class="__ul" aria-controls="BlockTools">
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools.html", alt: "Todas", active: true  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-entorno.html", alt: "Entorno", active: false } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-marketing.html", alt: "Marketing", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-modelo-de-negocio.html", alt: "Modelo de negocio", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-evolucion-empresa.html", alt: "Evolución empresa", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-administracion-y-finanzas.html", alt: "Admn. & Finanzas", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-propiedad-intelectual.html", alt: "Propiedad Intelectual", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"tools-internacionalizacion.html", alt: "Internacionalización", active: false  } %>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="block-tools-holder __toolsHolder" role="region" id="BlockTools" aria-live="polite">
+        <div class="block-tools __tools --with-details" data-header-mod="--white-all">
+            <svg class="title-svg-deco" viewBox="0 0 1440 340" aria-label="Tools">
+                <use xlink:href="./images/svg/ac78-svg.svg#titles__tool"></use>
+            </svg>
+
+            <!--- TEXTO CATEGORIA -->
+            <div class="card-tool-category __card" id="maincontent">
+                <div class="icon">
+                    <svg viewBox="0 0 200 200" aria-hidden="true">
+                        <!-- ADMIN Y FINANZAS -->
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_adm_finanzas"></use>
+                        <!-- EVOLUCION EMPRESA
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_empresa"></use> -->
+                        <!-- ENTORNO
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_entorno"></use> -->
+                        <!-- INTERNACIONALIZACION
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_internacionalizacion"></use> -->
+                        <!-- MARKETING
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_marketing"></use> -->
+                        <!-- MODELO DE NEGOCIO
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_negocio"></use> -->
+                        <!-- PROPIEDAD INTELECTUAL
+                        <use xlink:href="./images/svg/tools/tools.svg#icon_prop_intelectual"></use> -->
+                    </svg>
+                </div>
+
+                <div class="category">PROPIEDAD INTELECTUAL</div>
+                <h2 class="title">¿CONOCES ALGUNAS DE LAS POSIBILIDADES QUE OFRECE EL BASQUE DCC EN MATERIA DE PI?</h2>
+                <div class="content">
+                    <div class="left">
+                        <p>Si te dedicas a las Industrias Culturales y Creativas, los derechos de propiedad intelectual afectan directamente a tu negocio. La propiedad intelectual hace referencia a creaciones, invenciones, obras literarias y artísticas, así como símbolos, nombres e imágenes utilizados en el comercio.</p>
+                        <p>En el Basque DCC hemos definido las principales líneas de actuación y estrategias en materia de protección de activos intangibles (propiedad intelectual e industrial, en adelante “PI”) para prestar ayuda a profesionales y empresas de las ICCs en sus procesos de emprendimiento, innovación y mejora de la competitividad.</p>
+                        <p>En el Basque DCC hemos definido las principales líneas de actuación y estrategias en materia de protección de activos intangibles (propiedad intelectual e industrial, en adelante “PI”) para prestar ayuda a profesionales y empresas de las ICCs en sus procesos de emprendimiento, innovación y mejora de la competitividad.</p>
+                    </div>
+
+                    <div class="right">
+                        <p>Te Ofrecemos Asesoramiento Legal en materia de propiedad intelectual:</p>
+                        <ul>
+                            <li>Defensa ante la violación de derechos morales y de explotación.</li>
+                            <li>Asesoramiento ante la utilización de obras sin autorización, plagio alteraciones.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--- END TEXTO CATEGORIA -->
+
+            <ul>
+                <li>
+                    <%= partial "components/_card_tool_prop_intelectual", locals: {
+                    title: "Mapa Interactivo de Propiedad Intelectual",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 01 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail.html",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_admon_finanzas", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 02 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_empresa", locals: {
+                    title: "Mapa Interactivo de Propiedad Intelectual",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 03 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_entorno", locals: {
+                    title: "Mapa Interactivo de Propiedad Intelectual",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 04 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_internacionalizacion", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 05 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_marketing", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 06 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+                <li>
+                    <%= partial "components/_card_tool_negocio", locals: {
+                    title: "Checklist for Contracts",
+                    category: "ADMON & FINANZAS",
+                    aux: "TOOL 07 / 07",
+                    icon: "internacionalizacion",
+                    url: "tool-detail",
+                    } %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>

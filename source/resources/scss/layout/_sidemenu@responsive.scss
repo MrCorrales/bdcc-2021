@@ -1,0 +1,99 @@
+@media (max-width: $tabletPortrait) {
+  #Sidemenu {
+    --areas-large:
+            "logo logo logo logo logo logo logo logo logo"
+            "logo logo logo logo logo logo logo logo logo"
+            "logo logo logo logo logo logo logo logo logo"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "srch srch srch srch srch srch srch srch srch"
+            "info info info info info info info info info";
+
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+  }
+
+
+  .sidemenu__logo {
+    grid-area: logo;
+    padding: 0;
+  }
+
+  .sidemenu__nav {
+    grid-area: navi;
+    padding: var(--padding-xs);
+  }
+
+  .sidemenu__search {
+    grid-area: srch;
+    padding: var(--padding-xs);
+
+    .sidemenu__form {
+      max-width: 100%;
+    }
+  }
+
+  .sidemenu__info {
+    grid-area: info;
+    padding: var(--padding-xs) var(--padding-xs) 0;
+    p {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+
+
+@media (max-width: $smartphone) {
+  #Sidemenu {
+    --areas-large:
+            "logo logo logo logo logo logo logo logo logo"
+            "srch srch srch srch srch srch srch srch srch"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "navi navi navi navi navi navi navi navi navi"
+            "info info info info info info info info info";
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .sidemenu__logo {
+    grid-area: logo;
+    padding: 0;
+  }
+
+  .sidemenu__nav {
+    grid-area: navi;
+    padding: var(--padding-s) var(--padding-xs) 0;
+
+    ul {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-auto-flow: initial;
+    }
+  }
+
+  .sidemenu__search {
+    grid-area: srch;
+    padding: var(--padding-xs) var(--padding-xs) 0;
+
+    .sidemenu__form {
+      max-width: 100%;
+    }
+  }
+
+  .sidemenu__info {
+    grid-area: info;
+    padding: var(--padding-s) var(--padding-xs);
+    p {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}

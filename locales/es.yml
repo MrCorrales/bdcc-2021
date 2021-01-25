@@ -1,0 +1,63 @@
+---
+es:
+  cookies_text: "Utilizamos cookies propias y de terceros para mejorar tu accesibilidad, personalizar y analizar tu navegación. Al continuar navegando consideramos que aceptas su instalación. Puedes cambiar la configuración u obtener más información en nuestra "
+  cookies_linktitle: "política de cookies"
+  cookies_ok: "ACEPTAR"
+  cookies_nok: "cancelar"
+
+  herramientas: "Herramientas"
+  ayudas: "Ayudas"
+  euskara: "<span class='L'>Euskara</span><span class='S' aria-hidden='true'>EUS</span>"
+  castellano: "<span class='L'>Castellano</span><span class='S' aria-hidden='true'>ES</span>"
+  ingles: "<span class='L'>English</span><span class='S' aria-hidden='true'>EN</span>"
+  buscar: "Buscar"
+
+  dcnetwork_info: "El BASQUE DCC forma parte del <a href='https://districtsofcreativity.org/' target='_blank'>DC Network</a>. Su función es lograr un mundo mas prospero mediante el aprovechamiento del poder de la creatividad. Fundada en 2004, la red de los distritos creativos une a mas de 13 de las regiones más creativas e innovadoras del mundo. La orientación internacional del DC Network nos convierte en una red única de regiones que se centran en la creatividad y la innovación interdisciplinarias para mejorar la prosperidad."
+
+  menu1: "CONOCE BASQUE DCC"
+  menu2: "ICCS EN EUSKADI"
+  menu3: "CONTACTO"
+  menu4: "MAGAZINE"
+  menu5: "NOTICIAS"
+  menu6: "HERRAMIENTAS"
+  menu7: "AYUDAS"
+  menu8: "ORIENTACIÓN"
+  menu9: "FORMACIÓN"
+  menu10: "Buscar"
+
+  joinus_title: "Únete"
+  joinus_text: "A la comunidad De las Industrias Culturales y Creativas vascas"
+  joinus_button: "Unirse al BDCC"
+
+  form_name: "Nombre y apellidos"
+  form_name__placeholder: "Tu nombre completo"
+  form_company: "Empresa"
+  form_company__placeholder: "Tu empresa"
+  form_email: "E-Mail"
+  form_email__placeholder: "Tu e-mail"
+  form_privacy: "Acepto las condiciones y la <a href='politica-de-privacidad.html' target='_blank'>politica de privacidad</a>"
+
+
+  orientation: "Orientación"
+  orientation_title: "¿Necesitas Consejo u Orientación?"
+  orientation_text1: "¿Estás buscando herramientas de reflexión en torno a tu proyecto, empresa u organización? ¿Tienes alguna duda o pregunta relativa a las herramientas o programas de ayuda?"
+  orientation_text2: "Con nuestra experiencia y nuestra red, te apoyamos en todas las fases de tu iniciativa empresarial mediante asesoramiento personalizado."
+  orientation_button: "Ponte en contacto con BDCC"
+
+
+
+  toggle_menu: "Abrir/Cerrar Menú"
+
+  form_name_label: "Nombre"
+  form_email_label: "Email"
+  form_phone_label: "Teléfono"
+  form_body_label: "Mensaje"
+  form_submit_label: "Enviar"
+  form_name_example: "Escribe tu nombre"
+  form_email_example: "Escribe tu email"
+  form_phone_example: "Escribe tu teléfono"
+  form_body_example: "¿Cuántas (+de 100) camisetas quieres?"
+  form_legal: "Acepto la "
+  form_inputs_nok: "Ups, parece que tienes algún error en el formulario"
+  form_nok: "Ha ocurrido un error en el envio, intentalo de nuevo."
+  form_ok: "¡Muchas gracias! Nos podremos en contacto contigo enseguida."

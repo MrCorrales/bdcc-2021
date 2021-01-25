@@ -1,0 +1,49 @@
+.block-advice {
+  position: relative;
+  margin: 0 0 var(--padding-m);
+  padding-top: 0;
+
+  .block-image-rounded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    img {
+      opacity: .8;
+    }
+  }
+
+  .summary {
+    position: relative;
+
+    @include P--default--light();
+    color: currentColor;
+
+    max-width: var(--max-width-small);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--padding-xs);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .title-big-edge {
+    position: relative;
+    color: var(--white);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .block-advice .summary {
+    max-width: 100%;
+    padding: 0 var(--padding-xs);
+    margin: 0 0 var(--padding-xs);
+  }
+
+  .block-advice  .title-big-edge {
+    display: none;
+  }
+}

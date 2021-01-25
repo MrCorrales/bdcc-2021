@@ -1,0 +1,11 @@
+@media (max-width: $smartphone) {
+  .page-ayudas {
+    .header-double-title {
+      margin-bottom: var(--padding-xs);
+    }
+
+    .title-big-edge {
+      padding: 0 var(--padding-xs);
+    }
+  }
+}

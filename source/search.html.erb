@@ -1,0 +1,124 @@
+---
+title: BDCC
+description: BDCC
+url_root: http://www.bdcc.com
+url: http://www.bdcc.com
+---
+
+<article id="Page" class="page page-tools __page wrap" data-page="default" data-bg="--white">
+    <header class="header-double-title" data-header-mod="--default">
+        <h1 class="bdcc-title-small --right --bold --width-fixed">Buscador Euskadi.eus</h1>
+    </header>
+
+    <form class="default__form form-search">
+        <div class="default__form__textfield">
+            <label for="advice_form_name">Buscar</label>
+            <input type="text" id="advice_form_name" name="name" placeholder="¿Qué necesitas buscar?" data-form-required/>
+        </div>
+
+        <div class="form-search__submit-holder">
+            <div class="submit-holder">
+                <button type="submit" class="link-button --arrow-right --font-mid">
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <nav class="tab-nav --no-margin" id="maincontent">
+        <div class="ul-holder __holder">
+            <ul class="__ul" aria-label="Todas las herramientas">
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"#", alt: "Todo", active: true  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"#", alt: "Noticias", active: false } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"#", alt: "Herramientas", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"#", alt: "Ayudas y subvenciones", active: false  } %>
+                </li>
+                <li>
+                    <%= partial "components/home/_tools__button", locals: { url:"#", alt: "Premios y concursos", active: false  } %>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- class --loading para poner indicador de carga -->
+    <!-- class --loaded si esta todo cargado. Quita boton de cargar mas -->
+    <div class="block-search-results __toolsHolder" id="SearchResults" role="region" aria-live="polite">
+        <ul class="block-search-results__ul">
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+            <li>
+                <a class="link-basic" href="www.google.com" rel="nofollow" target="_blank"><%= lorem.sentence %></a>
+                <div class="url">https://www.<%= lorem.word %><%= lorem.word %><%= lorem.word %><b><%= lorem.word %></b><%= lorem.word %><%= lorem.word %>.<%= lorem.word %></div>
+                <p class="summary"><%= lorem.word %> <strong><%= lorem.word %> <%= lorem.word %> <%= lorem.word %></strong><%= lorem.paragraph %></p>
+            </li>
+        </ul>
+
+        <div class="load-more">
+            <a class="link-button --text-center" href="news.html">
+                <span class="default-text">Cargar más</span>
+                <span class="loading-text">Cargando</span>
+            </a>
+        </div>
+    </div>
+
+</article>

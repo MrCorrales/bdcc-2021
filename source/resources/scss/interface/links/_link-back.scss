@@ -1,0 +1,9 @@
+@mixin link-back() {
+  @extend %link-arrow;
+  text-transform: uppercase;
+  font-size: var(--font-size-xsmall);
+}
+
+.link-back {
+  @include link-back;
+}

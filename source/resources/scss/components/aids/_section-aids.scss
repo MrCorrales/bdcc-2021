@@ -1,0 +1,94 @@
+.section-aids {
+  --filters-max-width: #{(400px / 16px) * 1rem};
+
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 var(--padding-xs);
+  color: var(--black);
+
+  .section-aids__filters {
+    flex: 0 0 30%;
+    max-width: var(--filters-max-width);
+  }
+
+  .section-aids__aids {
+    flex: 1 0 70%;
+    padding: 0 var(--padding-xs) var(--padding-s) var(--padding-s);
+  }
+}
+
+.load-more {
+  margin-top: var(--padding-xs);
+  padding-bottom: var(--padding-xs);
+}
+
+.load-more a {
+  --font-size: #{(30px / 16px) * 1rem};
+  --height: #{(60px / 16px) * 1rem};
+  --bg: var(--white);
+  --color:currentColor;
+  --border-color:currentColor;
+  --colorHover: var(--grey-bdcc);
+  --bgHover: var(--black);
+  font-weight: 200;
+  width: 100%;
+  white-space: nowrap;
+
+  .loading-text {
+    display: none;
+  }
+}
+
+.--loaded .load-more {
+  display: none;
+}
+
+@keyframes ani-load {
+  from {color: var(--black);}
+  to {color: var(--white);}
+}
+
+.--loading .load-more a {
+  pointer-events: none;
+
+  background-color: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+
+  animation: ani-load .4s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+
+  .default-text {
+    display: none;
+  }
+
+  .loading-text {
+    display: inline-block;
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-aids {
+    padding: 0 0 0;
+
+    .section-aids__filters {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .section-aids__aids {
+      padding: 0 var(--padding-xs) 0;
+    }
+  }
+}
+
+@media (max-width: $smartphone) {
+  .load-more a {
+    --font-size: #{(24px / 16px) * 1rem};
+    --height: #{(48px / 16px) * 1rem};
+  }
+}

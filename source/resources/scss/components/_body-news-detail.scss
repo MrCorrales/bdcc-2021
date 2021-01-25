@@ -1,0 +1,20 @@
+.body-news-detail {
+  padding: 0 var(--padding-xl);
+  margin: var(--padding-s) auto var(--padding-l);
+  max-width: var(--max-width-news);
+  @include body--default();
+}
+
+@media (max-width: $tabletPortrait) {
+  .body-news-detail {
+    margin: var(--padding-xs) auto var(--padding-l);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .body-news-detail {
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+    margin: var(--padding-xs) auto var(--padding-l);
+  }
+}

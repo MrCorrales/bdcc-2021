@@ -1,0 +1,48 @@
+.block-magazine-articles {
+  padding: 0 0 10vh;
+  position: relative;
+}
+
+.block-magazine-articles ul {
+  //--font-size: #{(24px / 16px) * 1rem};
+  --font-size-title: #{(36px / 16px) * 1rem};
+  --font-size-p: #{(30px / 16px) * 1rem};
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--padding-xs) 0;
+
+  overflow: hidden;
+}
+
+.block-magazine-articles ul li {
+  --offsetRight:2px;
+  --size: 50%;
+  --width: calc(var(--size) + var(--offsetRight));
+
+  flex: 0 0 var(--width);
+  margin: 0 calc(var(--offsetRight) * -1) -1px 0;
+
+  &.--large {
+    --size: 100%;
+    --offsetRight: 1px;
+  }
+  &.--space-right {
+    margin-right: 10vw;
+  }
+}
+
+.block-magazine-articles ul li .block-magazine__articles__link {
+  min-height: 100%;
+  margin-bottom: 0;
+}
+
+@media (max-width: $smartphone) {
+  .block-magazine-articles ul li {
+    --offsetRight: 0px;
+    --size: 100%;
+  }
+}

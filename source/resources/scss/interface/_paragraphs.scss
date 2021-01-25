@@ -1,0 +1,59 @@
+@mixin --default-sans {
+  @include font-sans-default();
+
+  a {
+    color: inherit;
+    @include basic-a();
+
+    &[target=_self]:after {
+      content: "↘";
+    }
+
+    &[target=_blank]:not(.--cuchillo):after {
+      content: "↗";
+    }
+  }
+
+  b,strong {
+    font-weight: 600;
+  }
+}
+
+@mixin P--default {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sans);
+  font-weight: 400;
+  margin-top: .8em;
+  margin-bottom: .8em;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  b,strong {
+    font-weight: 500;
+  }
+}
+
+@mixin P--default--light {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sans);
+  font-weight: 200;
+  margin-top: .8em;
+  margin-bottom: .8em;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  b,strong {
+    font-weight: 500;
+  }
+}
+
+@mixin P--legal {
+  @include --default-sans();
+  font-size: rem($font-size-xsmall);
+}
